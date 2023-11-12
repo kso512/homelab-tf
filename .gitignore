@@ -32,3 +32,9 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Keep per-host secrets our of the repo
+hosts/*/variables.tf
+
+# Terraform lock files
+.terraform.lock.hcl
