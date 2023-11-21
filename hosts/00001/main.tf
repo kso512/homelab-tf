@@ -14,6 +14,16 @@ module "nextcloud" {
     ]
 }
 
+module "openvpn" {
+    source           = "../../modules/openvpn"
+    config_host_path = var.openvpn_config_host_path
+    container_name   = var.openvpn_container_name
+    dns_ip           = var.openvpn_dns_ip
+    external_port    = var.openvpn_external_port
+    site_name        = var.openvpn_site_name
+    openvpn_version  = var.openvpn_version
+}
+
 module "swag" {
     source           = "../../modules/swag"
     config_host_path = var.swag_config_host_path
