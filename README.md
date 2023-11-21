@@ -19,6 +19,7 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 | TCP   | UDP  | Allocation | Host Variable Declaration |
 |-------|------|------------|---------------------------|
 | 443   | -    | swag       | `swag_external_port`      |
+| -     | 1194 | openvpn    | `openvpn_external_port` |
 | 8888  | -    | nextcloud  | `nextcloud_external_port` |
 
 ## Requirements
@@ -44,7 +45,7 @@ After adding a module, or in a fresh repo, remember to run `terraform init` to b
 Configure crontab to apply `terraform` at boot; for example:
 
     # Terraform
-    @reboot cd ~/git/projects/kso512/homelab-tf/hosts/00001 ; terraform apply -auto-approve -no-color -compact-warnings&
+    @reboot cd /git/projects/kso512/homelab-tf/hosts/00001 ; terraform apply -auto-approve -no-color -compact-warnings&
 
 ## References
 
@@ -59,6 +60,9 @@ Configure crontab to apply `terraform` at boot; for example:
 * [Nextcloud](https://docs.nextcloud.com/)
   * Source: [linuxserver/nextcloud](https://hub.docker.com/r/linuxserver/nextcloud)
   * Depends on Swag
+* [OpenVPN](https://openvpn.net/community-resources/)
+  * Source: [dockerhub - kylemanna/openvpn](https://hub.docker.com/r/kylemanna/openvpn/)
+  * The instructions above give separate `docker` commands to generate keys, to allow for interaction.  We won't try to emulate that here; instead, use those commands (or others) to generate the required public/private key pair, either within the container or copied over from another.  Name them `${site_name}.key` and `${site_name}.crt`; for example `example.com.key` & `example.com.crt`.
 * [Swag](https://docs.linuxserver.io/general/swag/)
   * Source: [linuxserver/docker-swag](https://hub.docker.com/r/linuxserver/swag)
   * [Nextcloud subdomain reverse proxy example](https://docs.linuxserver.io/general/swag/#nextcloud-subdomain-reverse-proxy-example)
