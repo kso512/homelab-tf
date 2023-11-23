@@ -19,8 +19,9 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 | TCP   | UDP  | Allocation | Host Variable Declaration |
 |-------|------|------------|---------------------------|
 | 443   | -    | swag       | `swag_external_port`      |
-| -     | 1194 | openvpn    | `openvpn_external_port` |
+| -     | 1194 | openvpn    | `openvpn_external_port`   |
 | 8888  | -    | nextcloud  | `nextcloud_external_port` |
+| 8096  | -    | jellyfin   | `jellyfin_external_port`  |
 
 ## Requirements
 
@@ -57,11 +58,13 @@ Configure crontab to apply `terraform` at boot; for example:
 
 ### Modules
 
+* [Jellyfin](https://jellyfin.org/docs/general/installation/container#docker)
+  * Source: [jellyfin/jellyfin](https://hub.docker.com/r/jellyfin/jellyfin/)
 * [Nextcloud](https://docs.nextcloud.com/)
   * Source: [linuxserver/nextcloud](https://hub.docker.com/r/linuxserver/nextcloud)
   * Depends on Swag
 * [OpenVPN](https://openvpn.net/community-resources/)
-  * Source: [dockerhub - kylemanna/openvpn](https://hub.docker.com/r/kylemanna/openvpn/)
+  * Source: [kylemanna/openvpn](https://hub.docker.com/r/kylemanna/openvpn/)
   * The instructions above give separate `docker` commands to generate keys, to allow for interaction.  We won't try to emulate that here; instead, use those commands (or others) to generate the required public/private key pair, either within the container or copied over from another.  Name them `${site_name}.key` and `${site_name}.crt`; for example `example.com.key` & `example.com.crt`.
 * [Swag](https://docs.linuxserver.io/general/swag/)
   * Source: [linuxserver/docker-swag](https://hub.docker.com/r/linuxserver/swag)

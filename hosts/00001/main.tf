@@ -1,3 +1,16 @@
+module "jellyfin" {
+    source                = "../../modules/jellyfin"
+    cache_host_path       = var.jellyfin_cache_host_path
+    config_host_path      = var.jellyfin_config_host_path
+    container_name        = var.jellyfin_container_name
+    external_port         = var.jellyfin_external_port
+    jellyfin_version      = var.jellyfin_version
+    media1_container_path = var.jellyfin_media1_container_path
+    media1_host_path      = var.jellyfin_media1_host_path
+    media2_container_path = var.jellyfin_media2_container_path
+    media2_host_path      = var.jellyfin_media2_host_path
+}
+
 module "nextcloud" {
     source            = "../../modules/nextcloud"
     config_host_path  = var.nextcloud_config_host_path
