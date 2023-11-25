@@ -16,12 +16,13 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 
 ### Host: 00001
 
-| TCP   | UDP  | Allocation | Host Variable Declaration |
-|-------|------|------------|---------------------------|
-| 443   | -    | swag       | `swag_external_port`      |
-| -     | 1194 | openvpn    | `openvpn_external_port`   |
-| 8888  | -    | nextcloud  | `nextcloud_external_port` |
-| 8096  | -    | jellyfin   | `jellyfin_external_port`  |
+| TCP   | UDP  | Allocation    | Host Variable Declaration     |
+|-------|------|---------------|-------------------------------|
+| 443   | -    | swag          | `swag_external_port`          |
+| -     | 1194 | openvpn       | `openvpn_external_port`       |
+| 8888  | -    | nextcloud     | `nextcloud_external_port`     |
+| 8096  | -    | jellyfin      | `jellyfin_external_port`      |
+| 8123  | -    | homeassistant | `homeassistant_external_port` |
 
 ## Requirements
 
@@ -58,6 +59,8 @@ Configure crontab to apply `terraform` at boot; for example:
 
 ### Modules
 
+* [Home Assistant](https://www.home-assistant.io/installation/linux#platform-installation)
+  * Source: [home-assistant/core](https://github.com/home-assistant/core/pkgs/container/home-assistant)
 * [Jellyfin](https://jellyfin.org/docs/general/installation/container#docker)
   * Source: [jellyfin/jellyfin](https://hub.docker.com/r/jellyfin/jellyfin/)
 * [Nextcloud](https://docs.nextcloud.com/)
