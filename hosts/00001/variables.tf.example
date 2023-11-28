@@ -2,49 +2,196 @@
 
 variable "timezone" {
     sensitive = true
-    type = string
-    default = "Etc/UTC"
+    type      = string
+    default   = "Etc/UTC"
 }
 
+##### DOKUWIKI #####
+
+variable "dokuwiki_config_host_path" {
+    type    = string
+    default = "/docker/dokuwiki/config"
+}
+
+variable "dokuwiki_container_name" {
+    type    = string
+    default = "dokuwiki"
+}
+
+variable "dokuwiki_external_port" {
+    type    = number
+    default = "23001"
+}
+
+variable "dokuwiki_pgid" {
+    type    = number
+    default = "2000"
+}
+
+variable "dokuwiki_puid" {
+    type    = number
+    default = "2000"
+}
+
+variable "dokuwiki_title" {
+    type    = string
+    default = "Daily Journal"
+}
+
+variable "dokuwiki_version" {
+    type    = string
+    default = "latest"
+}
+
+##### HOMEASSISTANT #####
+
+variable "homeassistant_config_host_path" {
+    sensitive = true
+    type      = string
+    default   = "/docker/homeassistant/config"
+}
+
+variable "homeassistant_container_name" {
+    type    = string
+    default = "homeassistant"
+}
+
+variable "homeassistant_device_tracker_01_host" {
+    sensitive = true
+    type      = string
+    default   = "10.0.0.1"
+}
+
+variable "homeassistant_device_tracker_01_username" {
+    sensitive = true
+    type      = string
+    default   = "root"
+}
+
+variable "homeassistant_device_tracker_01_password" {
+    sensitive = true
+    type      = string
+    default   = "WiNTERMUTE!1"
+}
+
+variable "homeassistant_device_tracker_02_host" {
+    sensitive = true
+    type      = string
+    default   = "10.0.0.2"
+}
+
+variable "homeassistant_device_tracker_02_username" {
+    sensitive = true
+    type      = string
+    default   = "root"
+}
+
+variable "homeassistant_device_tracker_02_password" {
+    sensitive = true
+    type      = string
+    default   = "WiNTERMUTE!1"
+}
+
+variable "homeassistant_media_player_host" {
+    type    = string
+    default = "10.0.0.3"
+}
+
+variable "homeassistant_external_port" {
+    type    = number
+    default = "8123"
+}
+
+variable "homeassistant_version" {
+    type    = string
+    default = "latest"
+}
+
+##### JELLYFIN #####
+
+variable "jellyfin_cache_host_path" {
+    type    = string
+    default = "/docker/jellyfin/cache"
+}
+
+variable "jellyfin_config_host_path" {
+    type    = string
+    default = "/docker/jellyfin/config"
+}
+
+variable "jellyfin_container_name" {
+    type    = string
+    default = "jellyfin"
+}
+
+variable "jellyfin_external_port" {
+    type    = number
+    default = "8096"
+}
+
+variable "jellyfin_media1_container_path" {
+    type    = string
+    default = "/media-zfs"
+}
+
+variable "jellyfin_media1_host_path" {
+    type    = string
+    default = "/nfs"
+}
+
+variable "jellyfin_media2_container_path" {
+    type    = string
+    default = "/media-cifs"
+}
+
+variable "jellyfin_media2_host_path" {
+    type    = string
+    default = "/cifs"
+}
+
+variable "jellyfin_version" {
+    type    = string
+    default = "latest"
+}
 ##### NEXTCLOUD #####
 
 variable "nextcloud_config_host_path" {
-    type = string
+    type    = string
     default = "/docker/nextcloud/config"
 }
 
 variable "nextcloud_container_name" {
-    type = string
+    type    = string
     default = "nextcloud"
 }
 
 variable "nextcloud_data_host_path" {
-    type = string
+    type    = string
     default = "/docker/nextcloud/data"
 }
 
 variable "nextcloud_external_port" {
-    type = number
+    type    = number
     default = "8888"
 }
 
 variable "nextcloud_nfs_host_path" {
-    type = string
+    type    = string
     default = "/nfs"
 }
 
 variable "nextcloud_pgid" {
-    type = number
+    type    = number
     default = "2000"
 }
 
 variable "nextcloud_puid" {
-    type = number
+    type    = number
     default = "2000"
 }
 
 variable "nextcloud_version" {
-    type = string
+    type    = string
     default = "latest"
 }
 
@@ -83,69 +230,69 @@ variable "site_name" {
 ##### SWAG #####
 
 variable "swag_config_host_path" {
-    type = string
+    type    = string
     default = "/docker/swag/config"
 }
 
 variable "swag_container_name" {
-    type = string
+    type    = string
     default = "swag"
 }
 
 variable "swag_dnsplugin" {
-    type = string
+    type    = string
     default = "cloudflare"
 }
 
 variable "swag_external_port" {
-    type = number
+    type    = number
     default = "443"
 }
 
 variable "swag_pgid" {
-    type = number
+    type    = number
     default = "2000"
 }
 
 variable "swag_puid" {
-    type = number
+    type    = number
     default = "2000"
 }
 
 variable "swag_subdomains" {
-    type = string
+    type    = string
     default = "nextcloud"
 }
 
 variable "swag_upstream_app" {
     sensitive = true
-    type = string
-    default = "192.168.1.101"
+    type      = string
+    default   = "192.168.1.101"
 }
 
 # Using the variable from Nextcloud
 #variable "swag_upstream_port" {
-#    type = number
+#    type    = number
 #    default = "8888"
 #}
 
 variable "swag_upstream_proto" {
-    type = string
+    type    = string
     default = "https"
 }
 
 variable "swag_url" {
     sensitive = true
-    type = string
-    default = "example.com"
+    type      = string
+    default   = "example.com"
 }
 
 variable "swag_validation" {
-    type = string
+    type    = string
     default = "dns"
 }
 
 variable "swag_version" {
-    type = string
+    type    = string
     default = "latest"
 }

@@ -1,3 +1,15 @@
+module "dokuwiki" {
+    source           = "../../modules/dokuwiki"
+    config_host_path = var.dokuwiki_config_host_path
+    container_name   = var.dokuwiki_container_name
+    dokuwiki_version = var.dokuwiki_version
+    external_port    = var.dokuwiki_external_port
+    pgid             = var.dokuwiki_pgid
+    puid             = var.dokuwiki_puid
+    timezone         = var.timezone
+    title            = var.dokuwiki_title
+}
+
 module "homeassistant" {
     source                     = "../../modules/homeassistant"
     config_host_path           = var.homeassistant_config_host_path

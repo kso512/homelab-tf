@@ -20,9 +20,10 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 |-------|------|---------------|-------------------------------|
 | 443   | -    | swag          | `swag_external_port`          |
 | -     | 1194 | openvpn       | `openvpn_external_port`       |
-| 8888  | -    | nextcloud     | `nextcloud_external_port`     |
 | 8096  | -    | jellyfin      | `jellyfin_external_port`      |
 | 8123  | -    | homeassistant | `homeassistant_external_port` |
+| 8888  | -    | nextcloud     | `nextcloud_external_port`     |
+| 23001 | -    | dokuwiki      | `dokuwiki_external_port`      |
 
 ## Requirements
 
@@ -59,6 +60,8 @@ Configure crontab to apply `terraform` at boot; for example:
 
 ### Modules
 
+* [Dokuwiki](https://www.dokuwiki.org/dokuwiki/)
+  * Source: [linuxserver/dokuwiki](https://hub.docker.com/r/linuxserver/dokuwiki/#!)
 * [Home Assistant](https://www.home-assistant.io/installation/linux#platform-installation)
   * Source: [home-assistant/core](https://github.com/home-assistant/core/pkgs/container/home-assistant)
 * [Jellyfin](https://jellyfin.org/docs/general/installation/container#docker)
