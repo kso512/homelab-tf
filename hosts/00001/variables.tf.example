@@ -43,6 +43,38 @@ variable "dokuwiki_version" {
     default = "latest"
 }
 
+##### FRESHRSS #####
+
+variable "freshrss_config_host_path" {
+    type    = string
+    default = "/docker/config"
+}
+
+variable "freshrss_container_name" {
+    type    = string
+    default = "freshrss"
+}
+
+variable "freshrss_external_port" {
+    type    = number
+    default = "80"
+}
+
+variable "freshrss_pgid" {
+    type    = number
+    default = "2000"
+}
+
+variable "freshrss_puid" {
+    type    = number
+    default = "2000"
+}
+
+variable "freshrss_version" {
+    type    = string
+    default = "latest"
+}
+
 ##### HOMEASSISTANT #####
 
 variable "homeassistant_config_host_path" {

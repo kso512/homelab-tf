@@ -10,6 +10,17 @@ module "dokuwiki" {
     title            = var.dokuwiki_title
 }
 
+module "freshrss" {
+    source           = "../../modules/freshrss"
+    config_host_path = var.freshrss_config_host_path
+    container_name   = var.freshrss_container_name
+    freshrss_version = var.freshrss_version
+    external_port    = var.freshrss_external_port
+    pgid             = var.freshrss_pgid
+    puid             = var.freshrss_puid
+    timezone         = var.timezone
+}
+
 module "homeassistant" {
     source                     = "../../modules/homeassistant"
     config_host_path           = var.homeassistant_config_host_path
