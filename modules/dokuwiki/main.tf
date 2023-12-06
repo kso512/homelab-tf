@@ -19,7 +19,7 @@ resource "docker_container" "dokuwiki" {
     "TZ=${var.timezone}",
   ]
   image = docker_image.dokuwiki.image_id
-  name  = "dokuwiki"
+  name  = "${var.container_name}"
   ports {
     internal = 443
     external = "${var.external_port}"

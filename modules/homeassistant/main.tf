@@ -17,7 +17,7 @@ resource "docker_container" "homeassistant" {
     "TZ=${var.timezone}",
   ]
   image = docker_image.homeassistant.image_id
-  name  = "homeassistant"
+  name  = "${var.container_name}"
   ports {
     internal = 8123
     external = "${var.external_port}"

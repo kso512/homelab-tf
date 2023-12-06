@@ -14,7 +14,7 @@ resource "docker_image" "openvpn" {
 
 resource "docker_container" "openvpn" {
   image = docker_image.openvpn.image_id
-  name  = "openvpn"
+  name  = "${var.container_name}"
   capabilities {
     add = [
       "NET_ADMIN",
