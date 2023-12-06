@@ -18,6 +18,7 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 
 | TCP   | UDP  | Allocation    | Host Variable Declaration     |
 |-------|------|---------------|-------------------------------|
+| 53    | 53   | pihole        | `pihole_external_port_dns`    |
 | 443   | -    | swag          | `swag_external_port`          |
 | -     | 1194 | openvpn       | `openvpn_external_port`       |
 | 8096  | -    | jellyfin      | `jellyfin_external_port`      |
@@ -25,6 +26,14 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 | 8888  | -    | nextcloud     | `nextcloud_external_port`     |
 | 23001 | -    | dokuwiki      | `dokuwiki_external_port`      |
 | 23002 | -    | freshrss      | `freshrss_external_port`      |
+| 23003 | -    | pihole        | `pihole_external_port_web`    |
+
+### Host: 00002
+
+| TCP   | UDP  | Allocation    | Host Variable Declaration     |
+|-------|------|---------------|-------------------------------|
+| 53    | 53   | pihole        | `pihole_external_port_dns`    |
+| 23003 | -    | pihole        | `pihole_external_port_web`    |
 
 ## Requirements
 
@@ -75,6 +84,8 @@ Configure crontab to apply `terraform` at boot; for example:
 * [OpenVPN](https://openvpn.net/community-resources/)
   * Source: [kylemanna/openvpn](https://hub.docker.com/r/kylemanna/openvpn/)
   * The instructions above give separate `docker` commands to generate keys, to allow for interaction.  We won't try to emulate that here; instead, use those commands (or others) to generate the required public/private key pair, either within the container or copied over from another.  Name them `${site_name}.key` and `${site_name}.crt`; for example `example.com.key` & `example.com.crt`.
+* [pihole](https://pi-hole.net/)
+  * Source: [pihole/pihole](https://hub.docker.com/r/pihole/pihole)
 * [Swag](https://docs.linuxserver.io/general/swag/)
   * Source: [linuxserver/docker-swag](https://hub.docker.com/r/linuxserver/swag)
   * [Nextcloud subdomain reverse proxy example](https://docs.linuxserver.io/general/swag/#nextcloud-subdomain-reverse-proxy-example)
