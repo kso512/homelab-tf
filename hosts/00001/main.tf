@@ -21,6 +21,18 @@ module "freshrss" {
     timezone         = var.timezone
 }
 
+module "grafana" {
+    source = "../../modules/grafana"
+    config_host_path  = var.grafana_config_host_path
+    container_name    = var.grafana_container_name
+    external_port     = var.grafana_external_port
+    grafana_version   = var.grafana_version
+    ini_file          = var.grafana_ini_file
+    log_mode          = var.grafana_log_mode
+    postgres_host     = var.grafana_postgres_host
+    postgres_password = var.grafana_postgres_password
+}
+
 module "homeassistant" {
     source                     = "../../modules/homeassistant"
     config_host_path           = var.homeassistant_config_host_path

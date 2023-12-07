@@ -75,6 +75,48 @@ variable "freshrss_version" {
     default = "latest"
 }
 
+##### GRAFANA #####
+
+variable "grafana_config_host_path" {
+    type = string
+    default = "/docker/grafana/config"
+}
+
+variable "grafana_container_name" {
+    type = string
+    default = "/docker/grafana/config"
+}
+
+variable "grafana_external_port" {
+    type = number
+    default = "20005"
+}
+
+variable "grafana_ini_file" {
+    type = string
+    default = "/var/lib/grafana/grafana.ini"
+}
+
+variable "grafana_log_mode" {
+    type = string
+    default = "console file"
+}
+
+variable "grafana_postgres_host" {
+    type = string
+    default = "database.local:5432"
+}
+
+variable "grafana_postgres_password" {
+    type = string
+    default = "excellent-dashing-forever"
+}
+
+variable "grafana_version" {
+    type = string
+    default = "10.2.2"
+}
+
 ##### HOMEASSISTANT #####
 
 variable "homeassistant_config_host_path" {

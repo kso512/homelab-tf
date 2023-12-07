@@ -27,6 +27,8 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 | 23001 | -    | dokuwiki      | `dokuwiki_external_port`      |
 | 23002 | -    | freshrss      | `freshrss_external_port`      |
 | 23003 | -    | pihole        | `pihole_external_port_web`    |
+| 23004 | -    | RESERVED      | -                             |
+| 23005 | -    | grafana       | `grafana_external_port_web`   |
 
 ### Host: 00002
 
@@ -74,6 +76,8 @@ Configure crontab to apply `terraform` at boot; for example:
   * Source: [linuxserver/dokuwiki](https://hub.docker.com/r/linuxserver/dokuwiki/#!)
 * [FreshRSS](https://freshrss.org/)
   * Source: [linuxserver/freshrss](https://hub.docker.com/r/linuxserver/freshrss/#!)
+* [Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/configure-docker/)
+  * Source: [grafana/grafana-oss](https://hub.docker.com/r/grafana/grafana-oss/#!)
 * [Home Assistant](https://www.home-assistant.io/installation/linux#platform-installation)
   * Source: [home-assistant/core](https://github.com/home-assistant/core/pkgs/container/home-assistant)
 * [Jellyfin](https://jellyfin.org/docs/general/installation/container#docker)
