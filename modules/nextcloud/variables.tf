@@ -24,7 +24,7 @@ variable "nextcloud_version" {
 }
 
 variable "nfs_host_path" {
-    type = string
+    type    = string
     default = "/path/to/nfs"
 }
 
@@ -40,6 +40,6 @@ variable "puid" {
 
 variable "timezone" {
     sensitive = true
-    type = string
-    default = "Etc/UTC"
+    type      = string
+    default   = "Etc/UTC"
 }

@@ -78,42 +78,42 @@ variable "freshrss_version" {
 ##### GRAFANA #####
 
 variable "grafana_config_host_path" {
-    type = string
+    type    = string
     default = "/docker/grafana/config"
 }
 
 variable "grafana_container_name" {
-    type = string
+    type    = string
     default = "/docker/grafana/config"
 }
 
 variable "grafana_external_port" {
-    type = number
+    type    = number
     default = "20005"
 }
 
 variable "grafana_ini_file" {
-    type = string
+    type    = string
     default = "/var/lib/grafana/grafana.ini"
 }
 
 variable "grafana_log_mode" {
-    type = string
+    type    = string
     default = "console file"
 }
 
 variable "grafana_postgres_host" {
-    type = string
+    type    = string
     default = "database.local:5432"
 }
 
 variable "grafana_postgres_password" {
-    type = string
+    type    = string
     default = "excellent-dashing-forever"
 }
 
 variable "grafana_version" {
-    type = string
+    type    = string
     default = "10.2.2"
 }
 
@@ -304,79 +304,79 @@ variable "site_name" {
 ##### PIHOLE #####
 
 variable "pihole_config_host_path" {
-    type = string
+    type    = string
     default = "/docker/pihole/config"
 }
 
 variable "pihole_container_name" {
-    type = string
+    type    = string
     default = "pihole"
 }
 
 variable "pihole_custom_line_00001" {
-    type = string
+    type    = string
     default = "127.0.0.1 spam.example.com"
 }
 
 variable "pihole_dns_1" {
-    type = string
+    type    = string
     default = "8.8.8.8"
 }
 
 variable "pihole_dns_2" {
-    type = string
+    type    = string
     default = "2001:4860:4860:0:0:0:0:8888"
 }
 
 variable "pihole_dns_3" {
-    type = string
+    type    = string
     default = "1.1.1.1"
 }
 
 variable "pihole_dns_4" {
-    type = string
+    type    = string
     default = "2606:4700:4700::1111"
 }
 
 variable "pihole_dnsmasq_host_path" {
-    type = string
+    type    = string
     default = "/docker/pihole/dnsmasq"
 }
 
 variable "pihole_external_port_dns" {
-    type = number
+    type    = number
     default = "53"
 }
 
 variable "pihole_external_port_web" {
-    type = number
+    type    = number
     default = "20003"
 }
 
 variable "pihole_rev_server_cidr" {
-    type = string
+    type    = string
     default = "192.168.0.0/24"
 }
 
 variable "pihole_rev_server_domain" {
-    type = string
+    type    = string
     default = "lan"
 }
 
 variable "pihole_rev_server_target" {
-    type = string
+    type    = string
     default = "192.168.0.1"
 }
 
 variable "pihole_version" {
-    type = string
+    type    = string
     default = "latest"
 }
 
 variable "pihole_webpassword" {
     sensitive = true
-    type = string
-    default = "deadbeef"
+    type      = string
+    default   = "deadbeef"
 }
 
 ##### SWAG #####

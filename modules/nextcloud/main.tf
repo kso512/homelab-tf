@@ -17,6 +17,7 @@ resource "docker_container" "nextcloud" {
   name    = "${var.container_name}"
   restart = "unless-stopped"
   env = [
+    "DOCKER_MODS=linuxserver/mods:nextcloud-mediadc|linuxserver/mods:nextcloud-memories",
     "PUID=${var.puid}",
     "PGID=${var.pgid}",
     "TZ=${var.timezone}",
@@ -28,11 +29,11 @@ resource "docker_container" "nextcloud" {
   }
   volumes {
     container_path = "/config"
-    host_path    = "${var.config_host_path}"
+    host_path      = "${var.config_host_path}"
   }
   volumes {
     container_path = "/data"
-    host_path    = "${var.data_host_path}"
+    host_path      = "${var.data_host_path}"
   }
   volumes {
     container_path = "/srv/nfs"
