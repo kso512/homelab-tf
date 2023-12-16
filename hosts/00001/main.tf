@@ -135,6 +135,16 @@ module "pihole" {
     webpassword       = var.pihole_webpassword
 }
 
+module "plex" {
+    source           = "../../modules/plex"
+    config_host_path = var.plex_config_host_path
+    container_name   = var.plex_container_name
+    media_host_path  = var.plex_media_host_path
+    plex_version     = var.plex_version
+    puid             = var.plex_puid
+    timezone         = var.timezone
+}
+
 module "swag" {
     source           = "../../modules/swag"
     config_host_path = var.swag_config_host_path

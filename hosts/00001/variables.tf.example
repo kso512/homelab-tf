@@ -480,6 +480,38 @@ variable "pihole_webpassword" {
     default   = "deadbeef"
 }
 
+##### PLEX #####
+
+variable "plex_config_host_path" {
+    type    = string
+    default = "/path/to/library"
+}
+
+variable "plex_container_name" {
+    type    = string
+    default = "plex"
+}
+
+variable "plex_media_host_path" {
+    type    = string
+    default = "/path/to/media"
+}
+
+variable "plex_pgid" {
+    type = number
+    default = 1000
+}
+
+variable "plex_puid" {
+    type = number
+    default = 1000
+}
+
+variable "plex_version" {
+    type    = string
+    default = "latest"
+}
+
 ##### SWAG #####
 
 variable "swag_config_host_path" {

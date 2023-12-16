@@ -32,6 +32,7 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 | 23006 | -    | duplicati     | `duplicati_external_port`     |
 | 23007 | -    | dashy         | `dashy_external_port`         |
 | 23008 | -    | RESERVED      | -                             |
+| 23009 | -    | plex          | `plex_external_port`          |
 
 ### Host: 00002
 
@@ -75,8 +76,8 @@ Configure crontab to apply `terraform` at boot; for example:
 
 ### Modules
 
-* [dashy](https://github.com/Lissy93/dashy)
-  * Source: [linuxserver/dashy](https://hub.docker.com/r/lissy93/dashy)
+* [Dashy](https://github.com/Lissy93/dashy)
+  * Source: [lissy93/dashy](https://hub.docker.com/r/lissy93/dashy)
 * [Dokuwiki](https://www.dokuwiki.org/dokuwiki/)
   * Source: [linuxserver/dokuwiki](https://hub.docker.com/r/linuxserver/dokuwiki/#!)
 * [Duplicati](https://duplicati.com/)
@@ -97,6 +98,8 @@ Configure crontab to apply `terraform` at boot; for example:
   * The instructions above give separate `docker` commands to generate keys, to allow for interaction.  We won't try to emulate that here; instead, use those commands (or others) to generate the required public/private key pair, either within the container or copied over from another.  Name them `${site_name}.key` and `${site_name}.crt`; for example `example.com.key` & `example.com.crt`.
 * [pihole](https://pi-hole.net/)
   * Source: [pihole/pihole](https://hub.docker.com/r/pihole/pihole)
+* [Plex](https://www.plex.tv/)
+  * Source: [linuxserver/plex](https://hub.docker.com/r/linuxserver/plex)
 * [Swag](https://docs.linuxserver.io/general/swag/)
   * Source: [linuxserver/docker-swag](https://hub.docker.com/r/linuxserver/swag)
   * [Nextcloud subdomain reverse proxy example](https://docs.linuxserver.io/general/swag/#nextcloud-subdomain-reverse-proxy-example)
