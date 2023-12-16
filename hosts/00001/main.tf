@@ -145,6 +145,19 @@ module "plex" {
     timezone         = var.timezone
 }
 
+module "sickgear" {
+    source              = "../../modules/sickgear"
+    config_host_path    = var.sickgear_config_host_path
+    container_name      = var.sickgear_container_name
+    downloads_host_path = var.sickgear_downloads_host_path
+    pgid                = var.sickgear_pgid
+    puid                = var.sickgear_puid
+    sickgear_version    = var.sickgear_version
+    timezone            = var.timezone
+    tv_host_path        = var.sickgear_tv_host_path
+    external_port       = var.sickgear_external_port
+}
+
 module "swag" {
     source           = "../../modules/swag"
     config_host_path = var.swag_config_host_path

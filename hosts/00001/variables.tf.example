@@ -512,6 +512,48 @@ variable "plex_version" {
     default = "latest"
 }
 
+##### SICKGEAR #####
+
+variable "sickgear_config_host_path" {
+    type    = string
+    default = "/path/to/data"
+}
+
+variable "sickgear_container_name" {
+    type    = string
+    default = "sickgear"
+}
+
+variable "sickgear_downloads_host_path" {
+    type    = string
+    default = "/path/to/data"
+}
+
+variable "sickgear_external_port" {
+    type    = number
+    default = 8081
+}
+
+variable "sickgear_pgid" {
+    type    = number
+    default = 1000
+}
+
+variable "sickgear_puid" {
+    type    = number
+    default = 1000
+}
+
+variable "sickgear_tv_host_path" {
+    type    = string
+    default = "/path/to/data"
+}
+
+variable "sickgear_version" {
+    type    = string
+    default = "latest"
+}
+
 ##### SWAG #####
 
 variable "swag_config_host_path" {

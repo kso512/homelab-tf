@@ -32,7 +32,8 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 | 23006 | -    | duplicati     | `duplicati_external_port`     |
 | 23007 | -    | dashy         | `dashy_external_port`         |
 | 23008 | -    | RESERVED      | -                             |
-| 23009 | -    | plex          | `plex_external_port`          |
+| 23009 | -    | -             | -                             |
+| 23010 | -    | sickgear      | `sickgear_external_port`      |
 
 ### Host: 00002
 
@@ -100,6 +101,8 @@ Configure crontab to apply `terraform` at boot; for example:
   * Source: [pihole/pihole](https://hub.docker.com/r/pihole/pihole)
 * [Plex](https://www.plex.tv/)
   * Source: [linuxserver/plex](https://hub.docker.com/r/linuxserver/plex)
+* [Sickgear](https://github.com/sickgear/sickgear)
+  * Source: [linuxserver/sickgear](https://hub.docker.com/r/linuxserver/sickgear)
 * [Swag](https://docs.linuxserver.io/general/swag/)
   * Source: [linuxserver/docker-swag](https://hub.docker.com/r/linuxserver/swag)
   * [Nextcloud subdomain reverse proxy example](https://docs.linuxserver.io/general/swag/#nextcloud-subdomain-reverse-proxy-example)
