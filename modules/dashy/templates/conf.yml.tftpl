@@ -1,0 +1,31 @@
+---
+# Page meta info, like heading, footer text and nav links
+pageInfo:
+  title: ${title}
+  description: ${description}
+  logo: https://i.ibb.co/71WyyzM/little-bot-3.png
+
+# Optional app settings and configuration
+appConfig:
+  statusCheck: false
+  theme: ${theme}
+  fontAwesomeKey: c94dc2b452
+  customCss: '.clock p.time { font-size: 3rem !important; }'
+  layout: vertical
+  iconSize: small
+
+# Main content - An array of sections, each containing an array of items
+sections:
+- name: Today
+  icon: far fa-smile-beam
+  displayData:
+    collapsed: false
+    hideForGuests: false
+  widgets:
+  - type: clock
+  - type: weather
+    options:
+      apiKey: efdbade728b37086877a5e83442004db
+      city: ${city}
+      units: ${units}
+...

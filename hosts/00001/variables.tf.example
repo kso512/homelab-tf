@@ -6,6 +6,60 @@ variable "timezone" {
     default   = "Etc/UTC"
 }
 
+##### DASHY #####
+
+variable "dashy_apikey" {
+    sensitive = true
+    type      = string
+    default   = "efdbade728b37086877a5e83442004db"
+}
+
+variable "dashy_city" {
+    sensitive = true
+    type      = string
+    default   = "London"
+}
+
+variable "dashy_config_host_path" {
+    type    = string
+    default = "/root"
+}
+
+variable "dashy_container_name" {
+    type    = string
+    default = "my-dashboard"
+}
+
+variable "dashy_description" {
+    type    = string
+    default = "Welcome to your new dashboard!"
+}
+
+variable "dashy_external_port" {
+    type    = number
+    default = 8080
+}
+
+variable "dashy_theme" {
+    type    = string
+    default = "colorful"
+}
+
+variable "dashy_title" {
+    type    = string
+    default = "Dashy"
+}
+
+variable "dashy_units" {
+    type    = string
+    default = "metric"
+}
+
+variable "dashy_version" {
+    type    = string
+    default = "latest"
+}
+
 ##### DOKUWIKI #####
 
 variable "dokuwiki_config_host_path" {

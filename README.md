@@ -28,8 +28,10 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 | 23002 | -    | freshrss      | `freshrss_external_port`      |
 | 23003 | -    | pihole        | `pihole_external_port_web`    |
 | 23004 | -    | RESERVED      | -                             |
-| 23005 | -    | grafana       | `grafana_external_port_web`   |
-| 23006 | -    | duplicati     | `duplicati_external_port_web` |
+| 23005 | -    | grafana       | `grafana_external_port`       |
+| 23006 | -    | duplicati     | `duplicati_external_port`     |
+| 23007 | -    | dashy         | `dashy_external_port`         |
+| 23008 | -    | RESERVED      | -                             |
 
 ### Host: 00002
 
@@ -73,6 +75,8 @@ Configure crontab to apply `terraform` at boot; for example:
 
 ### Modules
 
+* [dashy](https://github.com/Lissy93/dashy)
+  * Source: [linuxserver/dashy](https://hub.docker.com/r/lissy93/dashy)
 * [Dokuwiki](https://www.dokuwiki.org/dokuwiki/)
   * Source: [linuxserver/dokuwiki](https://hub.docker.com/r/linuxserver/dokuwiki/#!)
 * [Duplicati](https://duplicati.com/)

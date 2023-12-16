@@ -1,3 +1,16 @@
+module "dashy" {
+    source           = "../../modules/dashy"
+    city             = var.dashy_city
+    config_host_path = var.dashy_config_host_path
+    container_name   = var.dashy_container_name
+    dashy_version    = var.dashy_version
+    description      = var.dashy_description
+    external_port    = var.dashy_external_port
+    theme            = var.dashy_theme
+    title            = var.dashy_title
+    units            = var.dashy_units
+}
+
 module "duplicati" {
     source             = "../../modules/duplicati"
     backups_host_path  = var.duplicati_backups_host_path
