@@ -29,6 +29,7 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 | 23003 | -    | pihole        | `pihole_external_port_web`    |
 | 23004 | -    | RESERVED      | -                             |
 | 23005 | -    | grafana       | `grafana_external_port_web`   |
+| 23006 | -    | duplicati     | `duplicati_external_port_web` |
 
 ### Host: 00002
 
@@ -74,6 +75,8 @@ Configure crontab to apply `terraform` at boot; for example:
 
 * [Dokuwiki](https://www.dokuwiki.org/dokuwiki/)
   * Source: [linuxserver/dokuwiki](https://hub.docker.com/r/linuxserver/dokuwiki/#!)
+* [Duplicati](https://duplicati.com/)
+  * Source: [linuxserver/duplicati](https://hub.docker.com/r/linuxserver/duplicati/#!)
 * [FreshRSS](https://freshrss.org/)
   * Source: [linuxserver/freshrss](https://hub.docker.com/r/linuxserver/freshrss/#!)
 * [Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/configure-docker/)

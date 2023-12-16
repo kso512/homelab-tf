@@ -1,3 +1,17 @@
+module "duplicati" {
+    source             = "../../modules/duplicati"
+    backups_host_path  = var.duplicati_backups_host_path
+    cli_args           = var.duplicati_cli_args
+    config_host_path   = var.duplicati_config_host_path
+    container_name     = var.duplicati_container_name
+    duplicati_version  = var.duplicati_version
+    external_port      = var.duplicati_external_port
+    pgid               = var.duplicati_pgid
+    puid               = var.duplicati_puid
+    source_host_path   = var.duplicati_source_host_path
+    timezone           = var.timezone
+}
+
 module "dokuwiki" {
     source           = "../../modules/dokuwiki"
     config_host_path = var.dokuwiki_config_host_path

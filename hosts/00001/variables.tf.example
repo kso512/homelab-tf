@@ -43,6 +43,53 @@ variable "dokuwiki_version" {
     default = "latest"
 }
 
+##### DUPLICATI #####
+
+variable "duplicati_backups_host_path" {
+    type    = string
+    default = "/path/to/backups"
+}
+
+variable "duplicati_cli_args" {
+    type    = string
+    default = ""
+}
+
+variable "duplicati_config_host_path" {
+    type    = string
+    default = "/path/to/appdata/config"
+}
+
+variable "duplicati_container_name" {
+    type    = string
+    default = "duplicati"
+}
+
+variable "duplicati_external_port" {
+    type    = number
+    default = "8200"
+}
+
+variable "duplicati_pgid" {
+    type    = number
+    default = "1000"
+}
+
+variable "duplicati_puid" {
+    type    = number
+    default = "1000"
+}
+
+variable "duplicati_source_host_path" {
+    type    = string
+    default = "/path/to/source"
+}
+
+variable "duplicati_version" {
+    type    = string
+    default = "latest"
+}
+
 ##### FRESHRSS #####
 
 variable "freshrss_config_host_path" {
