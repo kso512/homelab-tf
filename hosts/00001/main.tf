@@ -150,12 +150,12 @@ module "sickgear" {
     config_host_path    = var.sickgear_config_host_path
     container_name      = var.sickgear_container_name
     downloads_host_path = var.sickgear_downloads_host_path
+    external_port       = var.sickgear_external_port
     pgid                = var.sickgear_pgid
     puid                = var.sickgear_puid
     sickgear_version    = var.sickgear_version
     timezone            = var.timezone
     tv_host_path        = var.sickgear_tv_host_path
-    external_port       = var.sickgear_external_port
 }
 
 module "swag" {
@@ -174,4 +174,15 @@ module "swag" {
     upstream_proto   = var.swag_upstream_proto
     url              = var.swag_url
     validation       = var.swag_validation
+}
+
+module "tautulli" {
+    source           = "../../modules/tautulli"
+    config_host_path = var.tautulli_config_host_path
+    container_name   = var.tautulli_container_name
+    external_port    = var.tautulli_external_port
+    pgid             = var.tautulli_pgid
+    puid             = var.tautulli_puid
+    tautulli_version = var.tautulli_version
+    timezone         = var.timezone
 }

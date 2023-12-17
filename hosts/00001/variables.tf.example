@@ -623,3 +623,35 @@ variable "swag_version" {
     type    = string
     default = "latest"
 }
+
+##### TAUTULLI #####
+
+variable "tautulli_config_host_path" {
+    type    = string
+    default = "/path/to/appdata/config"
+}
+
+variable "tautulli_container_name" {
+    type    = string
+    default = "tautulli"
+}
+
+variable "tautulli_external_port" {
+    type    = number
+    default = 8181
+}
+
+variable "tautulli_pgid" {
+    type    = number
+    default = 1000
+}
+
+variable "tautulli_puid" {
+    type    = number
+    default = 1000
+}
+
+variable "tautulli_version" {
+    type    = string
+    default = "latest"
+}

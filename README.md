@@ -32,7 +32,7 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 | 23006 | -    | duplicati     | `duplicati_external_port`     |
 | 23007 | -    | dashy         | `dashy_external_port`         |
 | 23008 | -    | RESERVED      | -                             |
-| 23009 | -    | -             | -                             |
+| 23009 | -    | tautulli      | `tautulli_external_port`      |
 | 23010 | -    | sickgear      | `sickgear_external_port`      |
 
 ### Host: 00002
@@ -106,3 +106,5 @@ Configure crontab to apply `terraform` at boot; for example:
 * [Swag](https://docs.linuxserver.io/general/swag/)
   * Source: [linuxserver/docker-swag](https://hub.docker.com/r/linuxserver/swag)
   * [Nextcloud subdomain reverse proxy example](https://docs.linuxserver.io/general/swag/#nextcloud-subdomain-reverse-proxy-example)
+* [Tautulli](https://tautulli.com/)
+  * Source: [linuxserver/docker-tautulli](https://hub.docker.com/r/linuxserver/tautulli)
