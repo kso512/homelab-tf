@@ -142,6 +142,7 @@ module "plex" {
     media_host_path  = var.plex_media_host_path
     plex_version     = var.plex_version
     puid             = var.plex_puid
+    pgid             = var.plex_pgid
     timezone         = var.timezone
 }
 
