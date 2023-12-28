@@ -1,0 +1,85 @@
+##### GLOBAL #####
+
+variable "timezone" {
+    sensitive = true
+    type      = string
+    default   = "Etc/UTC"
+}
+
+##### PIHOLE #####
+
+variable "pihole_config_host_path" {
+    type    = string
+    default = "/docker/pihole/config"
+}
+
+variable "pihole_container_name" {
+    type    = string
+    default = "pihole"
+}
+
+variable "pihole_custom_line_00001" {
+    type    = string
+    default = "127.0.0.1 spam.example.com"
+}
+
+variable "pihole_dns_1" {
+    type    = string
+    default = "8.8.8.8"
+}
+
+variable "pihole_dns_2" {
+    type    = string
+    default = "2001:4860:4860:0:0:0:0:8888"
+}
+
+variable "pihole_dns_3" {
+    type    = string
+    default = "1.1.1.1"
+}
+
+variable "pihole_dns_4" {
+    type    = string
+    default = "2606:4700:4700::1111"
+}
+
+variable "pihole_dnsmasq_host_path" {
+    type    = string
+    default = "/docker/pihole/dnsmasq"
+}
+
+variable "pihole_external_port_dns" {
+    type    = number
+    default = "53"
+}
+
+variable "pihole_external_port_web" {
+    type    = number
+    default = "20003"
+}
+
+variable "pihole_rev_server_cidr" {
+    type    = string
+    default = "192.168.0.0/24"
+}
+
+variable "pihole_rev_server_domain" {
+    type    = string
+    default = "lan"
+}
+
+variable "pihole_rev_server_target" {
+    type    = string
+    default = "192.168.0.1"
+}
+
+variable "pihole_version" {
+    type    = string
+    default = "latest"
+}
+
+variable "pihole_webpassword" {
+    sensitive = true
+    type      = string
+    default   = "deadbeef"
+}

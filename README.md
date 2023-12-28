@@ -42,6 +42,13 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 | 53    | 53   | pihole        | `pihole_external_port_dns`    |
 | 23003 | -    | pihole        | `pihole_external_port_web`    |
 
+### Host: 00003
+
+| TCP   | UDP  | Allocation    | Host Variable Declaration     |
+|-------|------|---------------|-------------------------------|
+| 53    | 53   | pihole        | `pihole_external_port_dns`    |
+| 23003 | -    | pihole        | `pihole_external_port_web`    |
+
 ## Requirements
 
 * [Docker >= 20.10.5+dfsg1](https://docs.docker.com/engine/install/)
