@@ -29,11 +29,7 @@ resource "docker_container" "jellyfin" {
     host_path      = "${var.cache_host_path}"
   }
   volumes {
-    container_path = "${var.media1_container_path}"
-    host_path      = "${var.media1_host_path}"
-  }
-  volumes {
-    container_path = "${var.media2_container_path}"
-    host_path      = "${var.media2_host_path}"
+    container_path = "${var.media_container_path}"
+    host_path      = "${var.media_host_path}"
   }
 }

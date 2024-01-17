@@ -304,24 +304,14 @@ variable "jellyfin_external_port" {
     default = "8096"
 }
 
-variable "jellyfin_media1_container_path" {
+variable "jellyfin_media_container_path" {
     type    = string
-    default = "/media-zfs"
+    default = "/media"
 }
 
-variable "jellyfin_media1_host_path" {
+variable "jellyfin_media_host_path" {
     type    = string
     default = "/nfs"
-}
-
-variable "jellyfin_media2_container_path" {
-    type    = string
-    default = "/media-cifs"
-}
-
-variable "jellyfin_media2_host_path" {
-    type    = string
-    default = "/cifs"
 }
 
 variable "jellyfin_version" {
@@ -498,12 +488,12 @@ variable "plex_media_host_path" {
 }
 
 variable "plex_pgid" {
-    type = number
+    type    = number
     default = 1000
 }
 
 variable "plex_puid" {
-    type = number
+    type    = number
     default = 1000
 }
 

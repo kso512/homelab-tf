@@ -18,36 +18,37 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 
 | TCP   | UDP  | Allocation    | Host Variable Declaration     |
 |-------|------|---------------|-------------------------------|
-| 53    | 53   | pihole        | `pihole_external_port_dns`    |
-| 443   | -    | swag          | `swag_external_port`          |
 | -     | 1194 | openvpn       | `openvpn_external_port`       |
 | 8096  | -    | jellyfin      | `jellyfin_external_port`      |
 | 8123  | -    | homeassistant | `homeassistant_external_port` |
-| 8888  | -    | nextcloud     | `nextcloud_external_port`     |
 | 23001 | -    | dokuwiki      | `dokuwiki_external_port`      |
 | 23002 | -    | freshrss      | `freshrss_external_port`      |
-| 23003 | -    | pihole        | `pihole_external_port_web`    |
-| 23004 | -    | RESERVED      | -                             |
 | 23005 | -    | grafana       | `grafana_external_port`       |
 | 23006 | -    | duplicati     | `duplicati_external_port`     |
 | 23007 | -    | dashy         | `dashy_external_port`         |
-| 23008 | -    | RESERVED      | -                             |
 | 23009 | -    | tautulli      | `tautulli_external_port`      |
 | 23010 | -    | sickgear      | `sickgear_external_port`      |
 
 ### Host: 00002
 
-| TCP   | UDP  | Allocation    | Host Variable Declaration     |
-|-------|------|---------------|-------------------------------|
-| 53    | 53   | pihole        | `pihole_external_port_dns`    |
-| 23003 | -    | pihole        | `pihole_external_port_web`    |
+| TCP   | UDP | Allocation | Host Variable Declaration  |
+|-------|-----|------------|----------------------------|
+| 53    | 53  | pihole     | `pihole_external_port_dns` |
+| 23003 | -   | pihole     | `pihole_external_port_web` |
 
 ### Host: 00003
 
-| TCP   | UDP  | Allocation    | Host Variable Declaration     |
-|-------|------|---------------|-------------------------------|
-| 53    | 53   | pihole        | `pihole_external_port_dns`    |
-| 23003 | -    | pihole        | `pihole_external_port_web`    |
+| TCP   | UDP | Allocation | Host Variable Declaration  |
+|-------|-----|------------|----------------------------|
+| 53    | 53  | pihole     | `pihole_external_port_dns` |
+| 23003 | -   | pihole     | `pihole_external_port_web` |
+
+### Host: 00004
+
+| TCP  | UDP | Allocation | Host Variable Declaration |
+|------|-----|------------|---------------------------|
+| 443  | -   | swag       | `swag_external_port`      |
+| 8888 | -   | nextcloud  | `nextcloud_external_port` |
 
 ## Requirements
 

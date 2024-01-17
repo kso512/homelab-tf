@@ -11,20 +11,6 @@ module "dashy" {
     units            = var.dashy_units
 }
 
-module "duplicati" {
-    source             = "../../modules/duplicati"
-    backups_host_path  = var.duplicati_backups_host_path
-    cli_args           = var.duplicati_cli_args
-    config_host_path   = var.duplicati_config_host_path
-    container_name     = var.duplicati_container_name
-    duplicati_version  = var.duplicati_version
-    external_port      = var.duplicati_external_port
-    pgid               = var.duplicati_pgid
-    puid               = var.duplicati_puid
-    source_host_path   = var.duplicati_source_host_path
-    timezone           = var.timezone
-}
-
 module "dokuwiki" {
     source           = "../../modules/dokuwiki"
     config_host_path = var.dokuwiki_config_host_path
@@ -35,6 +21,20 @@ module "dokuwiki" {
     puid             = var.dokuwiki_puid
     timezone         = var.timezone
     title            = var.dokuwiki_title
+}
+
+module "duplicati" {
+    source            = "../../modules/duplicati"
+    backups_host_path = var.duplicati_backups_host_path
+    cli_args          = var.duplicati_cli_args
+    config_host_path  = var.duplicati_config_host_path
+    container_name    = var.duplicati_container_name
+    duplicati_version = var.duplicati_version
+    external_port     = var.duplicati_external_port
+    pgid              = var.duplicati_pgid
+    puid              = var.duplicati_puid
+    source_host_path  = var.duplicati_source_host_path
+    timezone          = var.timezone
 }
 
 module "freshrss" {
@@ -77,32 +77,14 @@ module "homeassistant" {
 }
 
 module "jellyfin" {
-    source                = "../../modules/jellyfin"
-    cache_host_path       = var.jellyfin_cache_host_path
-    config_host_path      = var.jellyfin_config_host_path
-    container_name        = var.jellyfin_container_name
-    external_port         = var.jellyfin_external_port
-    jellyfin_version      = var.jellyfin_version
-    media1_container_path = var.jellyfin_media1_container_path
-    media1_host_path      = var.jellyfin_media1_host_path
-    media2_container_path = var.jellyfin_media2_container_path
-    media2_host_path      = var.jellyfin_media2_host_path
-}
-
-module "nextcloud" {
-    source            = "../../modules/nextcloud"
-    config_host_path  = var.nextcloud_config_host_path
-    container_name    = var.nextcloud_container_name
-    data_host_path    = var.nextcloud_data_host_path
-    external_port     = var.nextcloud_external_port
-    nextcloud_version = var.nextcloud_version
-    nfs_host_path     = var.nextcloud_nfs_host_path
-    pgid              = var.nextcloud_pgid
-    puid              = var.nextcloud_puid
-    timezone          = var.timezone
-    depends_on = [
-      module.swag,
-    ]
+    source               = "../../modules/jellyfin"
+    cache_host_path      = var.jellyfin_cache_host_path
+    config_host_path     = var.jellyfin_config_host_path
+    container_name       = var.jellyfin_container_name
+    external_port        = var.jellyfin_external_port
+    jellyfin_version     = var.jellyfin_version
+    media_container_path = var.jellyfin_media_container_path
+    media_host_path      = var.jellyfin_media_host_path
 }
 
 module "openvpn" {
@@ -113,26 +95,6 @@ module "openvpn" {
     external_port    = var.openvpn_external_port
     site_name        = var.openvpn_site_name
     openvpn_version  = var.openvpn_version
-}
-
-module "pihole" {
-    source            = "../../modules/pihole"
-    config_host_path  = var.pihole_config_host_path
-    container_name    = var.pihole_container_name
-    custom_line_00001 = var.pihole_custom_line_00001
-    dns_1             = var.pihole_dns_1
-    dns_2             = var.pihole_dns_2
-    dns_3             = var.pihole_dns_3
-    dns_4             = var.pihole_dns_4
-    dnsmasq_host_path = var.pihole_dnsmasq_host_path
-    external_port_dns = var.pihole_external_port_dns
-    external_port_web = var.pihole_external_port_web
-    pihole_version    = var.pihole_version
-    rev_server_cidr   = var.pihole_rev_server_cidr
-    rev_server_domain = var.pihole_rev_server_domain
-    rev_server_target = var.pihole_rev_server_target
-    timezone          = var.timezone
-    webpassword       = var.pihole_webpassword
 }
 
 module "plex" {
@@ -159,23 +121,6 @@ module "sickgear" {
     tv_host_path        = var.sickgear_tv_host_path
 }
 
-module "swag" {
-    source           = "../../modules/swag"
-    config_host_path = var.swag_config_host_path
-    container_name   = var.swag_container_name
-    dnsplugin        = var.swag_dnsplugin
-    external_port    = var.swag_external_port
-    pgid             = var.swag_pgid
-    puid             = var.swag_puid
-    subdomains       = var.swag_subdomains
-    swag_version     = var.swag_version
-    timezone         = var.timezone
-    upstream_app     = var.swag_upstream_app
-    upstream_port    = var.nextcloud_external_port
-    upstream_proto   = var.swag_upstream_proto
-    url              = var.swag_url
-    validation       = var.swag_validation
-}
 
 module "tautulli" {
     source           = "../../modules/tautulli"

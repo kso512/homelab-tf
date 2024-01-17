@@ -18,24 +18,14 @@ variable "external_port" {
     default = 8096
 }
 
-variable "media1_container_path" {
+variable "media_container_path" {
     type    = string
-    default = "/path/to/media1"
+    default = "/path/to/media"
 }
 
-variable "media1_host_path" {
+variable "media_host_path" {
     type    = string
-    default = "/media1"
-}
-
-variable "media2_container_path" {
-    type    = string
-    default = "/path/to/media2"
-}
-
-variable "media2_host_path" {
-    type    = string
-    default = "/media2"
+    default = "/media"
 }
 
 variable "jellyfin_version" {
