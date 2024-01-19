@@ -16,18 +16,19 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 
 ### Host: 00001
 
-| TCP   | UDP  | Allocation    | Host Variable Declaration     |
-|-------|------|---------------|-------------------------------|
-| -     | 1194 | openvpn       | `openvpn_external_port`       |
-| 8096  | -    | jellyfin      | `jellyfin_external_port`      |
-| 8123  | -    | homeassistant | `homeassistant_external_port` |
-| 23001 | -    | dokuwiki      | `dokuwiki_external_port`      |
-| 23002 | -    | freshrss      | `freshrss_external_port`      |
-| 23005 | -    | grafana       | `grafana_external_port`       |
-| 23006 | -    | duplicati     | `duplicati_external_port`     |
-| 23007 | -    | dashy         | `dashy_external_port`         |
-| 23009 | -    | tautulli      | `tautulli_external_port`      |
-| 23010 | -    | sickgear      | `sickgear_external_port`      |
+| TCP   | UDP  | Allocation       | Host Variable Declaration        |
+|-------|------|------------------|----------------------------------|
+| -     | 1194 | openvpn          | `openvpn_external_port`          |
+| 8096  | -    | jellyfin         | `jellyfin_external_port`         |
+| 8123  | -    | homeassistant    | `homeassistant_external_port`    |
+| 23001 | -    | dokuwiki         | `dokuwiki_external_port`         |
+| 23002 | -    | freshrss         | `freshrss_external_port`         |
+| 23004 | -    | postgres-grafana | `postgres_grafana_external_port` |
+| 23005 | -    | grafana          | `grafana_external_port`          |
+| 23006 | -    | duplicati        | `duplicati_external_port`        |
+| 23007 | -    | dashy            | `dashy_external_port`            |
+| 23009 | -    | tautulli         | `tautulli_external_port`         |
+| 23010 | -    | sickgear         | `sickgear_external_port`         |
 
 ### Host: 00002
 
@@ -95,6 +96,7 @@ Configure crontab to apply `terraform` at boot; for example:
   * Source: [linuxserver/freshrss](https://hub.docker.com/r/linuxserver/freshrss/#!)
 * [Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/configure-docker/)
   * Source: [grafana/grafana-oss](https://hub.docker.com/r/grafana/grafana-oss/#!)
+  * Depends on PostgreSQL
 * [Home Assistant](https://www.home-assistant.io/installation/linux#platform-installation)
   * Source: [home-assistant/core](https://github.com/home-assistant/core/pkgs/container/home-assistant)
 * [Jellyfin](https://jellyfin.org/docs/general/installation/container#docker)
@@ -109,6 +111,8 @@ Configure crontab to apply `terraform` at boot; for example:
   * Source: [pihole/pihole](https://hub.docker.com/r/pihole/pihole)
 * [Plex](https://www.plex.tv/)
   * Source: [linuxserver/plex](https://hub.docker.com/r/linuxserver/plex)
+* [PostgreSQL](https://www.postgresql.org/)
+  * Source: [postgres](https://hub.docker.com/_/postgres)
 * [Sickgear](https://github.com/sickgear/sickgear)
   * Source: [linuxserver/sickgear](https://hub.docker.com/r/linuxserver/sickgear)
 * [Swag](https://docs.linuxserver.io/general/swag/)

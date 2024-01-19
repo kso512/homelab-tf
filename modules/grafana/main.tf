@@ -32,7 +32,9 @@ resource "docker_container" "grafana" {
     file    = "/var/lib/grafana/grafana.ini"
     content = templatefile("${path.module}/templates/grafana.ini.tftpl", {
       postgres_host     = var.postgres_host,
+      postgres_name     = var.postgres_name,
       postgres_password = var.postgres_password,
+      postgres_user     = var.postgres_user,
       })
   }
 }

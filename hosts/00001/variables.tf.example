@@ -208,9 +208,20 @@ variable "grafana_postgres_host" {
     default = "database.local:5432"
 }
 
-variable "grafana_postgres_password" {
+variable "grafana_postgres_name" {
     type    = string
-    default = "excellent-dashing-forever"
+    default = "grafana"
+}
+
+variable "grafana_postgres_password" {
+    sensitive = true
+    type      = string
+    default   = "excellent-dashing-forever"
+}
+
+variable "grafana_postgres_user" {
+    type    = string
+    default = "grafana"
 }
 
 variable "grafana_version" {
@@ -498,6 +509,44 @@ variable "plex_puid" {
 }
 
 variable "plex_version" {
+    type    = string
+    default = "latest"
+}
+
+##### POSTGRES-GRAFANA #####
+
+variable "postgres_grafana_container_name" {
+    type    = string
+    default = "some-postgres"
+}
+
+variable "postgres_grafana_data_host_path" {
+    type    = string
+    default = "/my/own/datadir"
+}
+
+variable "postgres_grafana_external_port" {
+    type    = number
+    default = 23004
+}
+
+variable "postgres_grafana_db" {
+    type    = string
+    default = "postgres"
+}
+
+variable "postgres_grafana_password" {
+    sensitive = true
+    type      = string
+    default   = "mysecretpassword"
+}
+
+variable "postgres_grafana_user" {
+    type    = string
+    default = "postgres"
+}
+
+variable "postgres_grafana_version" {
     type    = string
     default = "latest"
 }

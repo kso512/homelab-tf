@@ -57,7 +57,12 @@ module "grafana" {
     ini_file          = var.grafana_ini_file
     log_mode          = var.grafana_log_mode
     postgres_host     = var.grafana_postgres_host
+    postgres_name     = var.grafana_postgres_name
     postgres_password = var.grafana_postgres_password
+    postgres_user     = var.grafana_postgres_user
+    depends_on = [
+      module.postgres-grafana,
+    ]
 }
 
 module "homeassistant" {
@@ -106,6 +111,17 @@ module "plex" {
     puid             = var.plex_puid
     pgid             = var.plex_pgid
     timezone         = var.timezone
+}
+
+module "postgres-grafana" {
+    source           = "../../modules/postgres"
+    container_name    = var.postgres_grafana_container_name
+    data_host_path    = var.postgres_grafana_data_host_path
+    external_port     = var.postgres_grafana_external_port
+    postgres_db       = var.grafana_postgres_name
+    postgres_password = var.grafana_postgres_password
+    postgres_user     = var.grafana_postgres_user
+    postgres_version  = var.postgres_grafana_version
 }
 
 module "sickgear" {

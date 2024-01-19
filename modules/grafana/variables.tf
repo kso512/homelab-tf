@@ -33,7 +33,18 @@ variable "postgres_host" {
     default = "postgres"
 }
 
-variable "postgres_password" {
+variable "postgres_name" {
     type    = string
-    default = "Hunter7"
+    default = "grafana"
+}
+
+variable "postgres_password" {
+    sensitive = true
+    type      = string
+    default   = "Hunter7"
+}
+
+variable "postgres_user" {
+    type    = string
+    default = "grafana"
 }
