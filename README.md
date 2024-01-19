@@ -18,9 +18,11 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 
 | TCP   | UDP  | Allocation       | Host Variable Declaration        |
 |-------|------|------------------|----------------------------------|
+| 443   | -    | swag             | `swag_external_port`             |
 | -     | 1194 | openvpn          | `openvpn_external_port`          |
 | 8096  | -    | jellyfin         | `jellyfin_external_port`         |
 | 8123  | -    | homeassistant    | `homeassistant_external_port`    |
+| 8888  | -    | nextcloud        | `nextcloud_external_port`        |
 | 23001 | -    | dokuwiki         | `dokuwiki_external_port`         |
 | 23002 | -    | freshrss         | `freshrss_external_port`         |
 | 23004 | -    | postgres-grafana | `postgres_grafana_external_port` |
@@ -43,13 +45,6 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 |-------|-----|------------|----------------------------|
 | 53    | 53  | pihole     | `pihole_external_port_dns` |
 | 23003 | -   | pihole     | `pihole_external_port_web` |
-
-### Host: 00004
-
-| TCP  | UDP | Allocation | Host Variable Declaration |
-|------|-----|------------|---------------------------|
-| 443  | -   | swag       | `swag_external_port`      |
-| 8888 | -   | nextcloud  | `nextcloud_external_port` |
 
 ## Requirements
 
