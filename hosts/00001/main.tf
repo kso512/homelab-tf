@@ -140,6 +140,17 @@ module "postgres-grafana" {
     postgres_version  = var.postgres_grafana_version
 }
 
+module "postgres-nextcloud" {
+    source           = "../../modules/postgres"
+    container_name    = var.postgres_nextcloud_container_name
+    data_host_path    = var.postgres_nextcloud_data_host_path
+    external_port     = var.postgres_nextcloud_external_port
+    postgres_db       = var.postgres_nextcloud_db
+    postgres_password = var.postgres_nextcloud_password
+    postgres_user     = var.postgres_nextcloud_user
+    postgres_version  = var.postgres_nextcloud_version
+}
+
 module "sickgear" {
     source              = "../../modules/sickgear"
     config_host_path    = var.sickgear_config_host_path

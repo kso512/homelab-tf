@@ -16,21 +16,22 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 
 ### Host: 00001
 
-| TCP   | UDP  | Allocation       | Host Variable Declaration        |
-|-------|------|------------------|----------------------------------|
-| 443   | -    | swag             | `swag_external_port`             |
-| -     | 1194 | openvpn          | `openvpn_external_port`          |
-| 8096  | -    | jellyfin         | `jellyfin_external_port`         |
-| 8123  | -    | homeassistant    | `homeassistant_external_port`    |
-| 8888  | -    | nextcloud        | `nextcloud_external_port`        |
-| 23001 | -    | dokuwiki         | `dokuwiki_external_port`         |
-| 23002 | -    | freshrss         | `freshrss_external_port`         |
-| 23004 | -    | postgres-grafana | `postgres_grafana_external_port` |
-| 23005 | -    | grafana          | `grafana_external_port`          |
-| 23006 | -    | duplicati        | `duplicati_external_port`        |
-| 23007 | -    | dashy            | `dashy_external_port`            |
-| 23009 | -    | tautulli         | `tautulli_external_port`         |
-| 23010 | -    | sickgear         | `sickgear_external_port`         |
+| TCP   | UDP  | Allocation         | Host Variable Declaration          |
+|-------|------|--------------------|------------------------------------|
+| 443   | -    | swag               | `swag_external_port`               |
+| -     | 1194 | openvpn            | `openvpn_external_port`            |
+| 8096  | -    | jellyfin           | `jellyfin_external_port`           |
+| 8123  | -    | homeassistant      | `homeassistant_external_port`      |
+| 8888  | -    | nextcloud          | `nextcloud_external_port`          |
+| 23001 | -    | dokuwiki           | `dokuwiki_external_port`           |
+| 23002 | -    | freshrss           | `freshrss_external_port`           |
+| 23004 | -    | postgres-grafana   | `postgres_grafana_external_port`   |
+| 23005 | -    | grafana            | `grafana_external_port`            |
+| 23006 | -    | duplicati          | `duplicati_external_port`          |
+| 23007 | -    | dashy              | `dashy_external_port`              |
+| 23008 | -    | postgres-nextcloud | `postgres_nextcloud_external_port` |
+| 23009 | -    | tautulli           | `tautulli_external_port`           |
+| 23010 | -    | sickgear           | `sickgear_external_port`           |
 
 ### Host: 00002
 
@@ -98,6 +99,7 @@ Configure crontab to apply `terraform` at boot; for example:
   * Source: [jellyfin/jellyfin](https://hub.docker.com/r/jellyfin/jellyfin/)
 * [Nextcloud](https://docs.nextcloud.com/)
   * Source: [linuxserver/nextcloud](https://hub.docker.com/r/linuxserver/nextcloud)
+  * Depends on PostgreSQL indirectly; manual installation steps preclude building everything here in the same way that the Grafana module does.
   * Depends on Swag
 * [OpenVPN](https://openvpn.net/community-resources/)
   * Source: [kylemanna/openvpn](https://hub.docker.com/r/kylemanna/openvpn/)
