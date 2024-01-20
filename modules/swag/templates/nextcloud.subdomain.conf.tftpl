@@ -18,6 +18,8 @@ server {
     listen 443 ssl;
     listen [::]:443 ssl;
 
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+
     server_name nextcloud.*;
 
     include /config/nginx/ssl.conf;
@@ -35,4 +37,13 @@ server {
         #proxy_hide_header X-Frame-Options;
         proxy_max_temp_file_size 2048m;
     }
+
+    location /.well-known/carddav {
+        return 301 $scheme://$host/remote.php/dav;
+    }
+
+    location /.well-known/caldav {
+        return 301 $scheme://$host/remote.php/dav;
+    }
+
 }

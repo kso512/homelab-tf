@@ -17,7 +17,6 @@ resource "docker_container" "nextcloud" {
   name    = "${var.container_name}"
   restart = "unless-stopped"
   env = [
-    "DOCKER_MODS=linuxserver/mods:nextcloud-mediadc|linuxserver/mods:nextcloud-memories",
     "PUID=${var.puid}",
     "PGID=${var.pgid}",
     "TZ=${var.timezone}",
