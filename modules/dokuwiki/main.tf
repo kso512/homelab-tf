@@ -33,7 +33,8 @@ resource "docker_container" "dokuwiki" {
   upload {
     file    = "/config/dokuwiki/conf/local.php"
     content = templatefile("${path.module}/templates/local.php.tftpl", {
-      title = var.title,
+      template = var.template,
+      title    = var.title,
       })
   }
 }

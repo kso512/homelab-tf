@@ -19,6 +19,7 @@ module "dokuwiki" {
     external_port    = var.dokuwiki_external_port
     pgid             = var.dokuwiki_pgid
     puid             = var.dokuwiki_puid
+    template         = var.dokuwiki_template
     timezone         = var.timezone
     title            = var.dokuwiki_title
 }

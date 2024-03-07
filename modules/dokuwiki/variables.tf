@@ -28,6 +28,11 @@ variable "puid" {
     default = "1000"
 }
 
+variable "template" {
+    type    = string
+    default = "dokuwiki"
+}
+
 variable "timezone" {
     sensitive = true
     type      = string

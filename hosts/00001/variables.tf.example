@@ -87,6 +87,11 @@ variable "dokuwiki_puid" {
     default = "2000"
 }
 
+variable "dokuwiki_template" {
+    type    = string
+    default = "dokuwiki"
+}
+
 variable "dokuwiki_title" {
     type    = string
     default = "Daily Journal"
