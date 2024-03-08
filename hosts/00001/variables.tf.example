@@ -234,6 +234,38 @@ variable "grafana_version" {
     default = "10.2.2"
 }
 
+##### GROCY #####
+
+variable "grocy_config_host_path" {
+    type    = string
+    default = "/path/to/grocy/config"
+}
+
+variable "grocy_container_name" {
+    type    = string
+    default = "grocy"
+}
+
+variable "grocy_external_port" {
+    type    = number
+    default = "23011"
+}
+
+variable "grocy_pgid" {
+    type    = number
+    default = "1000"
+}
+
+variable "grocy_puid" {
+    type    = number
+    default = "1000"
+}
+
+variable "grocy_version" {
+    type    = string
+    default = "latest"
+}
+
 ##### HOMEASSISTANT #####
 
 variable "homeassistant_config_host_path" {

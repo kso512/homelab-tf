@@ -66,6 +66,17 @@ module "grafana" {
     ]
 }
 
+module "grocy" {
+    source           = "../../modules/grocy"
+    config_host_path = var.grocy_config_host_path
+    container_name   = var.grocy_container_name
+    external_port    = var.grocy_external_port
+    grocy_version    = var.grocy_version
+    pgid             = var.grocy_pgid
+    puid             = var.grocy_puid
+    timezone         = var.timezone
+}
+
 module "homeassistant" {
     source                     = "../../modules/homeassistant"
     config_host_path           = var.homeassistant_config_host_path

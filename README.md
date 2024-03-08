@@ -32,6 +32,7 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 | 23008 | -    | postgres-nextcloud | `postgres_nextcloud_external_port` |
 | 23009 | -    | tautulli           | `tautulli_external_port`           |
 | 23010 | -    | sickgear           | `sickgear_external_port`           |
+| 23011 | -    | grocy              | `grocy_external_port`              |
 
 ### Host: 00002
 
@@ -93,6 +94,8 @@ Configure crontab to apply `terraform` at boot; for example:
 * [Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/configure-docker/)
   * Source: [grafana/grafana-oss](https://hub.docker.com/r/grafana/grafana-oss/#!)
   * Depends on PostgreSQL
+* [Grocy](https://grocy.info/)
+  * Source: [linuxserver/grocy](https://hub.docker.com/r/linuxserver/grocy)
 * [Home Assistant](https://www.home-assistant.io/installation/linux#platform-installation)
   * Source: [home-assistant/core](https://github.com/home-assistant/core/pkgs/container/home-assistant)
 * [Jellyfin](https://jellyfin.org/docs/general/installation/container#docker)
