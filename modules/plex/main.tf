@@ -21,8 +21,12 @@ resource "docker_container" "plex" {
   ]
   image = docker_image.plex.image_id
   name  = "${var.container_name}"
-  network_mode = "host"
   restart = "unless-stopped"
+  ports {
+    internal = 32400
+    external = "${var.external_port}"
+    protocol = "tcp"
+  }
   volumes {
     container_path = "/config"
     host_path      = "${var.config_host_path}"

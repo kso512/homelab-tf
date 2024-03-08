@@ -420,6 +420,11 @@ variable "plex_container_name" {
     default = "plex"
 }
 
+variable "plex_external_port" {
+    type = number
+    default = 32400
+}
+
 variable "plex_media_host_path" {
     type    = string
     default = "/path/to/media"

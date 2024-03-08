@@ -123,6 +123,7 @@ module "plex" {
     source           = "../../modules/plex"
     config_host_path = var.plex_config_host_path
     container_name   = var.plex_container_name
+    external_port    = var.plex_external_port
     media_host_path  = var.plex_media_host_path
     plex_version     = var.plex_version
     puid             = var.plex_puid
