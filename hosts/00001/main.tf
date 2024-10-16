@@ -11,6 +11,18 @@ module "dashy" {
     units            = var.dashy_units
 }
 
+module "digikam" {
+    source           = "../../modules/digikam"
+    config_host_path = var.digikam_config_host_path
+    container_name   = var.digikam_container_name
+    digikam_version  = var.digikam_version
+    external_port    = var.digikam_external_port
+    import_host_path = var.digikam_import_host_path
+    pgid             = var.digikam_pgid
+    puid             = var.digikam_puid
+    timezone         = var.timezone
+}
+
 module "dokuwiki" {
     source           = "../../modules/dokuwiki"
     config_host_path = var.dokuwiki_config_host_path

@@ -33,6 +33,7 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 | 23009 | -    | tautulli           | `tautulli_external_port`           |
 | 23010 | -    | sickgear           | `sickgear_external_port`           |
 | 23011 | -    | grocy              | `grocy_external_port`              |
+| 23012 | -    | digikam            | `digikam_external_port`            |
 
 ### Host: 00002
 
@@ -85,6 +86,8 @@ Configure crontab to apply `terraform` at boot; for example:
 
 * [Dashy](https://github.com/Lissy93/dashy)
   * Source: [lissy93/dashy](https://hub.docker.com/r/lissy93/dashy)
+* [Digikam](https://www.digikam.org/)
+  * Source: [linuxserver/digikam](https://hub.docker.com/r/linuxserver/digikam/#!)
 * [Dokuwiki](https://www.dokuwiki.org/dokuwiki/)
   * Source: [linuxserver/dokuwiki](https://hub.docker.com/r/linuxserver/dokuwiki/#!)
 * [Duplicati](https://duplicati.com/)
