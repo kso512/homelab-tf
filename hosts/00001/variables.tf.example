@@ -367,42 +367,6 @@ variable "homeassistant_version" {
     default = "latest"
 }
 
-##### JELLYFIN #####
-
-variable "jellyfin_cache_host_path" {
-    type    = string
-    default = "/docker/jellyfin/cache"
-}
-
-variable "jellyfin_config_host_path" {
-    type    = string
-    default = "/docker/jellyfin/config"
-}
-
-variable "jellyfin_container_name" {
-    type    = string
-    default = "jellyfin"
-}
-
-variable "jellyfin_external_port" {
-    type    = number
-    default = "8096"
-}
-
-variable "jellyfin_media_container_path" {
-    type    = string
-    default = "/media"
-}
-
-variable "jellyfin_media_host_path" {
-    type    = string
-    default = "/nfs"
-}
-
-variable "jellyfin_version" {
-    type    = string
-    default = "latest"
-}
 ##### NEXTCLOUD #####
 
 variable "nextcloud_config_host_path" {
@@ -475,43 +439,6 @@ variable "openvpn_version" {
 variable "site_name" {
     type    = string
     default = "example.com"
-}
-
-##### PLEX #####
-
-variable "plex_config_host_path" {
-    type    = string
-    default = "/path/to/library"
-}
-
-variable "plex_container_name" {
-    type    = string
-    default = "plex"
-}
-
-variable "plex_external_port" {
-    type = number
-    default = 32400
-}
-
-variable "plex_media_host_path" {
-    type    = string
-    default = "/path/to/media"
-}
-
-variable "plex_pgid" {
-    type    = number
-    default = 1000
-}
-
-variable "plex_puid" {
-    type    = number
-    default = 1000
-}
-
-variable "plex_version" {
-    type    = string
-    default = "latest"
 }
 
 ##### POSTGRES-GRAFANA #####
@@ -590,48 +517,6 @@ variable "postgres_nextcloud_version" {
     default = "latest"
 }
 
-##### SICKGEAR #####
-
-variable "sickgear_config_host_path" {
-    type    = string
-    default = "/path/to/data"
-}
-
-variable "sickgear_container_name" {
-    type    = string
-    default = "sickgear"
-}
-
-variable "sickgear_downloads_host_path" {
-    type    = string
-    default = "/path/to/data"
-}
-
-variable "sickgear_external_port" {
-    type    = number
-    default = 8081
-}
-
-variable "sickgear_pgid" {
-    type    = number
-    default = 1000
-}
-
-variable "sickgear_puid" {
-    type    = number
-    default = 1000
-}
-
-variable "sickgear_tv_host_path" {
-    type    = string
-    default = "/path/to/data"
-}
-
-variable "sickgear_version" {
-    type    = string
-    default = "latest"
-}
-
 ##### SWAG #####
 
 variable "swag_config_host_path" {
@@ -698,38 +583,6 @@ variable "swag_validation" {
 }
 
 variable "swag_version" {
-    type    = string
-    default = "latest"
-}
-
-##### TAUTULLI #####
-
-variable "tautulli_config_host_path" {
-    type    = string
-    default = "/path/to/appdata/config"
-}
-
-variable "tautulli_container_name" {
-    type    = string
-    default = "tautulli"
-}
-
-variable "tautulli_external_port" {
-    type    = number
-    default = 8181
-}
-
-variable "tautulli_pgid" {
-    type    = number
-    default = 1000
-}
-
-variable "tautulli_puid" {
-    type    = number
-    default = 1000
-}
-
-variable "tautulli_version" {
     type    = string
     default = "latest"
 }

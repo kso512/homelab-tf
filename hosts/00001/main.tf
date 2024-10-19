@@ -105,17 +105,6 @@ module "homeassistant" {
     timezone                   = var.timezone
 }
 
-module "jellyfin" {
-    source               = "../../modules/jellyfin"
-    cache_host_path      = var.jellyfin_cache_host_path
-    config_host_path     = var.jellyfin_config_host_path
-    container_name       = var.jellyfin_container_name
-    external_port        = var.jellyfin_external_port
-    jellyfin_version     = var.jellyfin_version
-    media_container_path = var.jellyfin_media_container_path
-    media_host_path      = var.jellyfin_media_host_path
-}
-
 module "nextcloud" {
     source            = "../../modules/nextcloud"
     config_host_path  = var.nextcloud_config_host_path
@@ -142,18 +131,6 @@ module "openvpn" {
     openvpn_version  = var.openvpn_version
 }
 
-module "plex" {
-    source           = "../../modules/plex"
-    config_host_path = var.plex_config_host_path
-    container_name   = var.plex_container_name
-    external_port    = var.plex_external_port
-    media_host_path  = var.plex_media_host_path
-    plex_version     = var.plex_version
-    puid             = var.plex_puid
-    pgid             = var.plex_pgid
-    timezone         = var.timezone
-}
-
 module "postgres-grafana" {
     source           = "../../modules/postgres"
     container_name    = var.postgres_grafana_container_name
@@ -176,19 +153,6 @@ module "postgres-nextcloud" {
     postgres_version  = var.postgres_nextcloud_version
 }
 
-module "sickgear" {
-    source              = "../../modules/sickgear"
-    config_host_path    = var.sickgear_config_host_path
-    container_name      = var.sickgear_container_name
-    downloads_host_path = var.sickgear_downloads_host_path
-    external_port       = var.sickgear_external_port
-    pgid                = var.sickgear_pgid
-    puid                = var.sickgear_puid
-    sickgear_version    = var.sickgear_version
-    timezone            = var.timezone
-    tv_host_path        = var.sickgear_tv_host_path
-}
-
 module "swag" {
     source           = "../../modules/swag"
     config_host_path = var.swag_config_host_path
@@ -205,15 +169,4 @@ module "swag" {
     upstream_proto   = var.swag_upstream_proto
     url              = var.swag_url
     validation       = var.swag_validation
-}
-
-module "tautulli" {
-    source           = "../../modules/tautulli"
-    config_host_path = var.tautulli_config_host_path
-    container_name   = var.tautulli_container_name
-    external_port    = var.tautulli_external_port
-    pgid             = var.tautulli_pgid
-    puid             = var.tautulli_puid
-    tautulli_version = var.tautulli_version
-    timezone         = var.timezone
 }

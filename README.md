@@ -20,7 +20,6 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 |-------|------|--------------------|------------------------------------|
 | 443   | -    | swag               | `swag_external_port`               |
 | -     | 1194 | openvpn            | `openvpn_external_port`            |
-| 8096  | -    | jellyfin           | `jellyfin_external_port`           |
 | 8123  | -    | homeassistant      | `homeassistant_external_port`      |
 | 8888  | -    | nextcloud          | `nextcloud_external_port`          |
 | 23001 | -    | dokuwiki           | `dokuwiki_external_port`           |
@@ -30,8 +29,6 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 | 23006 | -    | duplicati          | `duplicati_external_port`          |
 | 23007 | -    | dashy              | `dashy_external_port`              |
 | 23008 | -    | postgres-nextcloud | `postgres_nextcloud_external_port` |
-| 23009 | -    | tautulli           | `tautulli_external_port`           |
-| 23010 | -    | sickgear           | `sickgear_external_port`           |
 | 23011 | -    | grocy              | `grocy_external_port`              |
 | 23012 | -    | digikam            | `digikam_external_port`            |
 
@@ -101,8 +98,6 @@ Configure crontab to apply `terraform` at boot; for example:
   * Source: [linuxserver/grocy](https://hub.docker.com/r/linuxserver/grocy)
 * [Home Assistant](https://www.home-assistant.io/installation/linux#platform-installation)
   * Source: [home-assistant/core](https://github.com/home-assistant/core/pkgs/container/home-assistant)
-* [Jellyfin](https://jellyfin.org/docs/general/installation/container#docker)
-  * Source: [jellyfin/jellyfin](https://hub.docker.com/r/jellyfin/jellyfin/)
 * [Nextcloud](https://docs.nextcloud.com/)
   * Source: [linuxserver/nextcloud](https://hub.docker.com/r/linuxserver/nextcloud)
   * Depends on PostgreSQL indirectly; manual installation steps preclude building everything here in the same way that the Grafana module does.
@@ -112,14 +107,8 @@ Configure crontab to apply `terraform` at boot; for example:
   * The instructions above give separate `docker` commands to generate keys, to allow for interaction.  We won't try to emulate that here; instead, use those commands (or others) to generate the required public/private key pair, either within the container or copied over from another.  Name them `${site_name}.key` and `${site_name}.crt`; for example `example.com.key` & `example.com.crt`.
 * [pihole](https://pi-hole.net/)
   * Source: [pihole/pihole](https://hub.docker.com/r/pihole/pihole)
-* [Plex](https://www.plex.tv/)
-  * Source: [linuxserver/plex](https://hub.docker.com/r/linuxserver/plex)
 * [PostgreSQL](https://www.postgresql.org/)
   * Source: [postgres](https://hub.docker.com/_/postgres)
-* [Sickgear](https://github.com/sickgear/sickgear)
-  * Source: [linuxserver/sickgear](https://hub.docker.com/r/linuxserver/sickgear)
 * [Swag](https://docs.linuxserver.io/general/swag/)
   * Source: [linuxserver/docker-swag](https://hub.docker.com/r/linuxserver/swag)
   * [Nextcloud subdomain reverse proxy example](https://docs.linuxserver.io/general/swag/#nextcloud-subdomain-reverse-proxy-example)
-* [Tautulli](https://tautulli.com/)
-  * Source: [linuxserver/docker-tautulli](https://hub.docker.com/r/linuxserver/tautulli)
