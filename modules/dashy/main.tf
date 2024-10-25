@@ -16,17 +16,17 @@ resource "docker_container" "dashy" {
   image = docker_image.dashy.image_id
   name  = "${var.container_name}"
   ports {
-    internal = 80
+    internal = 8080
     external = "${var.external_port}"
     protocol = "tcp"
   }
   restart = "unless-stopped"
   volumes {
-    container_path = "/app/public"
+    container_path = "/app/user-data"
     host_path      = "${var.config_host_path}"
   }
   upload {
-    file    = "/app/public/conf.yml"
+    file    = "/app/user-data/conf.yml"
     content = templatefile("${path.module}/templates/conf.yml.tftpl", {
       apikey      = var.apikey,
       city        = var.city,
