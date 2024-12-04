@@ -6,6 +6,43 @@ variable "timezone" {
     default   = "Etc/UTC"
 }
 
+##### DIGIKAM #####
+
+variable "digikam_config_host_path" {
+    type    = string
+    default = "/docker/digikam/config"
+}
+
+variable "digikam_container_name" {
+    type    = string
+    default = "digikam"
+}
+
+variable "digikam_external_port" {
+    type    = number
+    default = "20001"
+}
+
+variable "digikam_import_host_path" {
+    type    = string
+    default = "/import"
+}
+
+variable "digikam_pgid" {
+    type    = number
+    default = "2000"
+}
+
+variable "digikam_puid" {
+    type    = number
+    default = "2000"
+}
+
+variable "digikam_version" {
+    type    = string
+    default = "latest"
+}
+
 ##### PIHOLE #####
 
 variable "pihole_config_host_path" {

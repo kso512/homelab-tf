@@ -6,6 +6,70 @@ variable "timezone" {
     default   = "Etc/UTC"
 }
 
+##### HOMEASSISTANT #####
+
+variable "homeassistant_config_host_path" {
+    sensitive = true
+    type      = string
+    default   = "/docker/homeassistant/config"
+}
+
+variable "homeassistant_container_name" {
+    type    = string
+    default = "homeassistant"
+}
+
+variable "homeassistant_device_tracker_01_host" {
+    sensitive = true
+    type      = string
+    default   = "10.0.0.1"
+}
+
+variable "homeassistant_device_tracker_01_username" {
+    sensitive = true
+    type      = string
+    default   = "root"
+}
+
+variable "homeassistant_device_tracker_01_password" {
+    sensitive = true
+    type      = string
+    default   = "WiNTERMUTE!1"
+}
+
+variable "homeassistant_device_tracker_02_host" {
+    sensitive = true
+    type      = string
+    default   = "10.0.0.2"
+}
+
+variable "homeassistant_device_tracker_02_username" {
+    sensitive = true
+    type      = string
+    default   = "root"
+}
+
+variable "homeassistant_device_tracker_02_password" {
+    sensitive = true
+    type      = string
+    default   = "WiNTERMUTE!1"
+}
+
+variable "homeassistant_media_player_host" {
+    type    = string
+    default = "10.0.0.3"
+}
+
+variable "homeassistant_external_port" {
+    type    = number
+    default = "8123"
+}
+
+variable "homeassistant_version" {
+    type    = string
+    default = "latest"
+}
+
 ##### PIHOLE #####
 
 variable "pihole_config_host_path" {

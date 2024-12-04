@@ -16,11 +16,12 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 
 ### Host: 00001
 
+Dell server with many cores; lots of RAM & local storage
+
 | TCP   | UDP  | Allocation         | Host Variable Declaration          |
 |-------|------|--------------------|------------------------------------|
 | 443   | -    | swag               | `swag_external_port`               |
 | -     | 1194 | openvpn            | `openvpn_external_port`            |
-| 8123  | -    | homeassistant      | `homeassistant_external_port`      |
 | 8888  | -    | nextcloud          | `nextcloud_external_port`          |
 | 23001 | -    | dokuwiki           | `dokuwiki_external_port`           |
 | 23002 | -    | freshrss           | `freshrss_external_port`           |
@@ -30,21 +31,26 @@ To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitigno
 | 23007 | -    | dashy              | `dashy_external_port`              |
 | 23008 | -    | postgres-nextcloud | `postgres_nextcloud_external_port` |
 | 23011 | -    | grocy              | `grocy_external_port`              |
-| 23012 | -    | digikam            | `digikam_external_port`            |
 
 ### Host: 00002
 
+Re-purposed PC now server as a file server
+
 | TCP   | UDP | Allocation | Host Variable Declaration  |
 |-------|-----|------------|----------------------------|
 | 53    | 53  | pihole     | `pihole_external_port_dns` |
 | 23003 | -   | pihole     | `pihole_external_port_web` |
+| 23012 | -   | digikam    | `digikam_external_port`    |
 
 ### Host: 00003
 
-| TCP   | UDP | Allocation | Host Variable Declaration  |
-|-------|-----|------------|----------------------------|
-| 53    | 53  | pihole     | `pihole_external_port_dns` |
-| 23003 | -   | pihole     | `pihole_external_port_web` |
+Raspberry Pi 4
+
+| TCP   | UDP | Allocation    | Host Variable Declaration     |
+|-------|-----|---------------|-------------------------------|
+| 53    | 53  | pihole        | `pihole_external_port_dns`    |
+| 8123  | -   | homeassistant | `homeassistant_external_port` |
+| 23003 | -   | pihole        | `pihole_external_port_web`    |
 
 ## Requirements
 

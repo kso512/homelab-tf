@@ -11,18 +11,6 @@ module "dashy" {
     units            = var.dashy_units
 }
 
-module "digikam" {
-    source           = "../../modules/digikam"
-    config_host_path = var.digikam_config_host_path
-    container_name   = var.digikam_container_name
-    digikam_version  = var.digikam_version
-    external_port    = var.digikam_external_port
-    import_host_path = var.digikam_import_host_path
-    pgid             = var.digikam_pgid
-    puid             = var.digikam_puid
-    timezone         = var.timezone
-}
-
 module "dokuwiki" {
     source           = "../../modules/dokuwiki"
     config_host_path = var.dokuwiki_config_host_path
@@ -87,22 +75,6 @@ module "grocy" {
     pgid             = var.grocy_pgid
     puid             = var.grocy_puid
     timezone         = var.timezone
-}
-
-module "homeassistant" {
-    source                     = "../../modules/homeassistant"
-    config_host_path           = var.homeassistant_config_host_path
-    container_name             = var.homeassistant_container_name
-    device_tracker_01_host     = var.homeassistant_device_tracker_01_host
-    device_tracker_01_username = var.homeassistant_device_tracker_01_username
-    device_tracker_01_password = var.homeassistant_device_tracker_01_password
-    device_tracker_02_host     = var.homeassistant_device_tracker_02_host
-    device_tracker_02_username = var.homeassistant_device_tracker_02_username
-    device_tracker_02_password = var.homeassistant_device_tracker_02_password
-    external_port              = var.homeassistant_external_port
-    homeassistant_version      = var.homeassistant_version
-    media_player_host          = var.homeassistant_media_player_host
-    timezone                   = var.timezone
 }
 
 module "nextcloud" {

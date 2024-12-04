@@ -1,3 +1,19 @@
+module "homeassistant" {
+    source                     = "../../modules/homeassistant"
+    config_host_path           = var.homeassistant_config_host_path
+    container_name             = var.homeassistant_container_name
+    device_tracker_01_host     = var.homeassistant_device_tracker_01_host
+    device_tracker_01_username = var.homeassistant_device_tracker_01_username
+    device_tracker_01_password = var.homeassistant_device_tracker_01_password
+    device_tracker_02_host     = var.homeassistant_device_tracker_02_host
+    device_tracker_02_username = var.homeassistant_device_tracker_02_username
+    device_tracker_02_password = var.homeassistant_device_tracker_02_password
+    external_port              = var.homeassistant_external_port
+    homeassistant_version      = var.homeassistant_version
+    media_player_host          = var.homeassistant_media_player_host
+    timezone                   = var.timezone
+}
+
 module "pihole" {
     source            = "../../modules/pihole"
     config_host_path  = var.pihole_config_host_path
