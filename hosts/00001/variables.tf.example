@@ -310,34 +310,39 @@ variable "nextcloud_version" {
 
 ##### OPENVPN #####
 
-variable "config_host_path" {
-    type    = string
-    default = "/docker/openvpn/data"
+variable "openvpn_admin_external_port" {
+    type    = number
+    default = "943"
 }
 
-variable "container_name" {
+variable "openvpn_config_host_path" {
     type    = string
-    default = "openvpn"
+    default = "/path/to/data"
 }
 
-variable "dns_ip" {
+variable "openvpn_container_name" {
     type    = string
-    default = "10.0.0.1"
+    default = "openvpn-as"
 }
 
-variable "external_port" {
+variable "openvpn_tcp_external_port" {
+    type    = number
+    default = "443"
+}
+
+variable "openvpn_tun_host_path" {
+    type    = string
+    default = "/dev/net/tun"
+}
+
+variable "openvpn_udp_external_port" {
     type    = number
     default = "1194"
 }
 
 variable "openvpn_version" {
     type    = number
-    default = "2.4"
-}
-
-variable "site_name" {
-    type    = string
-    default = "example.com"
+    default = "latest"
 }
 
 ##### POSTGRES-GRAFANA #####

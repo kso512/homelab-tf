@@ -12,46 +12,6 @@ The defaults specified in the `variables.tf` of each module reflect the examples
 
 To keep secrets out of the repo, we're using `hosts/*/variables.tf` in `.gitignore`.  The contents of these host-specific `variables.tf` files can be stored in a vault or password manager.  An example (`variables.tf.example`) has been provided with reasonable defaults, so feel free to start with that as a template.
 
-## Container and Port Assignments
-
-### Host: 00001
-
-Dell server with many cores; lots of RAM & local storage
-
-| TCP   | UDP  | Allocation         | Host Variable Declaration          |
-|-------|------|--------------------|------------------------------------|
-| 443   | -    | swag               | `swag_external_port`               |
-| -     | 1194 | openvpn            | `openvpn_external_port`            |
-| 8888  | -    | nextcloud          | `nextcloud_external_port`          |
-| 23001 | -    | dokuwiki           | `dokuwiki_external_port`           |
-| 23002 | -    | freshrss           | `freshrss_external_port`           |
-| 23004 | -    | postgres-grafana   | `postgres_grafana_external_port`   |
-| 23005 | -    | grafana            | `grafana_external_port`            |
-| 23006 | -    | duplicati          | `duplicati_external_port`          |
-| 23007 | -    | dashy              | `dashy_external_port`              |
-| 23008 | -    | postgres-nextcloud | `postgres_nextcloud_external_port` |
-| 23011 | -    | grocy              | `grocy_external_port`              |
-
-### Host: 00002
-
-Re-purposed PC now server as a file server
-
-| TCP   | UDP | Allocation | Host Variable Declaration  |
-|-------|-----|------------|----------------------------|
-| 53    | 53  | pihole     | `pihole_external_port_dns` |
-| 23003 | -   | pihole     | `pihole_external_port_web` |
-| 23012 | -   | digikam    | `digikam_external_port`    |
-
-### Host: 00003
-
-Raspberry Pi 4
-
-| TCP   | UDP | Allocation    | Host Variable Declaration     |
-|-------|-----|---------------|-------------------------------|
-| 53    | 53  | pihole        | `pihole_external_port_dns`    |
-| 8123  | -   | homeassistant | `homeassistant_external_port` |
-| 23003 | -   | pihole        | `pihole_external_port_web`    |
-
 ## Requirements
 
 * [Docker >= 20.10.5+dfsg1](https://docs.docker.com/engine/install/)
@@ -109,8 +69,7 @@ Configure crontab to apply `terraform` at boot; for example:
   * Depends on PostgreSQL indirectly; manual installation steps preclude building everything here in the same way that the Grafana module does.
   * Depends on Swag
 * [OpenVPN](https://openvpn.net/community-resources/)
-  * Source: [kylemanna/openvpn](https://hub.docker.com/r/kylemanna/openvpn/)
-  * The instructions above give separate `docker` commands to generate keys, to allow for interaction.  We won't try to emulate that here; instead, use those commands (or others) to generate the required public/private key pair, either within the container or copied over from another.  Name them `${site_name}.key` and `${site_name}.crt`; for example `example.com.key` & `example.com.crt`.
+  * Source: [openvpn/openvpn-as](https://hub.docker.com/r/openvpn/openvpn-as)
 * [pihole](https://pi-hole.net/)
   * Source: [pihole/pihole](https://hub.docker.com/r/pihole/pihole)
 * [PostgreSQL](https://www.postgresql.org/)

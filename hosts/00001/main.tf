@@ -50,7 +50,7 @@ module "freshrss" {
 }
 
 module "grafana" {
-    source = "../../modules/grafana"
+    source            = "../../modules/grafana"
     config_host_path  = var.grafana_config_host_path
     container_name    = var.grafana_container_name
     external_port     = var.grafana_external_port
@@ -90,21 +90,23 @@ module "nextcloud" {
     timezone          = var.timezone
     depends_on = [
       module.swag,
+      module.postgres-nextcloud,
     ]
 }
 
 module "openvpn" {
-    source           = "../../modules/openvpn"
-    config_host_path = var.openvpn_config_host_path
-    container_name   = var.openvpn_container_name
-    dns_ip           = var.openvpn_dns_ip
-    external_port    = var.openvpn_external_port
-    site_name        = var.openvpn_site_name
-    openvpn_version  = var.openvpn_version
+    source              = "../../modules/openvpn"
+    admin_external_port = var.openvpn_admin_external_port
+    config_host_path    = var.openvpn_config_host_path
+    container_name      = var.openvpn_container_name
+    openvpn_version     = var.openvpn_version
+    tcp_external_port   = var.openvpn_tcp_external_port
+    tun_host_path       = var.openvpn_tun_host_path
+    udp_external_port   = var.openvpn_udp_external_port
 }
 
 module "postgres-grafana" {
-    source           = "../../modules/postgres"
+    source            = "../../modules/postgres"
     container_name    = var.postgres_grafana_container_name
     data_host_path    = var.postgres_grafana_data_host_path
     external_port     = var.postgres_grafana_external_port
@@ -115,7 +117,7 @@ module "postgres-grafana" {
 }
 
 module "postgres-nextcloud" {
-    source           = "../../modules/postgres"
+    source            = "../../modules/postgres"
     container_name    = var.postgres_nextcloud_container_name
     data_host_path    = var.postgres_nextcloud_data_host_path
     external_port     = var.postgres_nextcloud_external_port

@@ -1,29 +1,34 @@
+variable "admin_external_port" {
+    type    = number
+    default = "943"
+}
+
 variable "config_host_path" {
     type    = string
-    default = "ovpn-data-example"
+    default = "/path/to/data"
 }
 
 variable "container_name" {
     type    = string
-    default = "openvpn"
-}
-
-variable "dns_ip" {
-    type    = string
-    default = "192.168.0.1"
-}
-
-variable "external_port" {
-    type    = number
-    default = "1194"
+    default = "openvpn-as"
 }
 
 variable "openvpn_version" {
-    type    = number
-    default = "2.4"
+    type    = string
+    default = "latest"
 }
 
-variable "site_name" {
+variable "tcp_external_port" {
+    type    = number
+    default = "443"
+}
+
+variable "tun_host_path" {
     type    = string
-    default = "example.com"
+    default = "/dev/net/tun"
+}
+
+variable "udp_external_port" {
+    type    = number
+    default = "1194"
 }
