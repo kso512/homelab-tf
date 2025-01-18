@@ -421,6 +421,44 @@ variable "postgres_nextcloud_version" {
     default = "latest"
 }
 
+##### POSTGRES-VIKUNJA #####
+
+variable "postgres_vikunja_container_name" {
+    type    = string
+    default = "postgres-vikunja"
+}
+
+variable "postgres_vikunja_data_host_path" {
+    type    = string
+    default = "/vikunja/postgres/data"
+}
+
+variable "postgres_vikunja_external_port" {
+    type    = number
+    default = 3008
+}
+
+variable "postgres_vikunja_db" {
+    type    = string
+    default = "vikunja"
+}
+
+variable "postgres_vikunja_password" {
+    sensitive = true
+    type      = string
+    default   = "super-secret-password"
+}
+
+variable "postgres_vikunja_user" {
+    type    = string
+    default = "vikunja"
+}
+
+variable "postgres_vikunja_version" {
+    type    = string
+    default = "latest"
+}
+
 ##### SWAG #####
 
 variable "swag_config_host_path" {
@@ -487,6 +525,66 @@ variable "swag_validation" {
 }
 
 variable "swag_version" {
+    type    = string
+    default = "latest"
+}
+
+##### VIKUNJA #####
+
+variable "vikunja_config_host_path" {
+    type    = string
+    default = "./files"
+}
+
+variable "vikunja_container_name" {
+    type    = string
+    default = "vikunja"
+}
+
+variable "vikunja_database_database" {
+    type    = string
+    default = "vikunja"
+}
+
+variable "vikunja_database_host" {
+    type    = string
+    default = "db"
+}
+
+variable "vikunja_database_password" {
+    sensitive = true
+    type      = string
+    default   = "changeme"
+}
+
+variable "vikunja_database_type" {
+    type    = string
+    default = "mysql"
+}
+
+variable "vikunja_database_user" {
+    sensitive = true
+    type      = string
+    default   = "vikunja"
+}
+
+variable "vikunja_external_port" {
+    type    = number
+    default = "3456"
+}
+
+variable "vikunja_service_jwtsecret" {
+    sensitive = true
+    type      = string
+    default   = "<a super secure random secret>"
+}
+
+variable "vikunja_service_publicurl" {
+    type    = string
+    default = "http://<the public url where Vikunja is reachable>"
+}
+
+variable "vikunja_version" {
     type    = string
     default = "latest"
 }

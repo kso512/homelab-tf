@@ -127,6 +127,17 @@ module "postgres-nextcloud" {
     postgres_version  = var.postgres_nextcloud_version
 }
 
+module "postgres-vikunja" {
+    source            = "../../modules/postgres"
+    container_name    = var.postgres_vikunja_container_name
+    data_host_path    = var.postgres_vikunja_data_host_path
+    external_port     = var.postgres_vikunja_external_port
+    postgres_db       = var.postgres_vikunja_db
+    postgres_password = var.postgres_vikunja_password
+    postgres_user     = var.postgres_vikunja_user
+    postgres_version  = var.postgres_vikunja_version
+}
+
 module "swag" {
     source           = "../../modules/swag"
     config_host_path = var.swag_config_host_path
@@ -143,4 +154,22 @@ module "swag" {
     upstream_proto   = var.swag_upstream_proto
     url              = var.swag_url
     validation       = var.swag_validation
+}
+
+module "vikunja" {
+    source            = "../../modules/vikunja"
+    config_host_path  = var.vikunja_config_host_path
+    container_name    = var.vikunja_container_name
+    database_database = var.vikunja_database_database
+    database_host     = var.vikunja_database_host
+    database_password = var.vikunja_database_password
+    database_type     = var.vikunja_database_type
+    database_user     = var.vikunja_database_user
+    external_port     = var.vikunja_external_port
+    service_jwtsecret = var.vikunja_service_jwtsecret
+    service_publicurl = var.vikunja_service_publicurl
+    vikunja_version   = var.vikunja_version
+    depends_on = [
+      module.postgres-vikunja,
+    ]
 }

@@ -77,3 +77,5 @@ Configure crontab to apply `terraform` at boot; for example:
 * [Swag](https://docs.linuxserver.io/general/swag/)
   * Source: [linuxserver/docker-swag](https://hub.docker.com/r/linuxserver/swag)
   * [Nextcloud subdomain reverse proxy example](https://docs.linuxserver.io/general/swag/#nextcloud-subdomain-reverse-proxy-example)
+* [Vikunja](https://vikunja.io/)
+  * Source: [Docker Walkthrough](https://vikunja.io/docs/docker-walkthrough/)
