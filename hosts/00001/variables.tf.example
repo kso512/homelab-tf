@@ -97,6 +97,11 @@ variable "dokuwiki_title" {
     default = "Daily Journal"
 }
 
+variable "dokuwiki_typography" {
+    type    = number
+    default = 1
+}
+
 variable "dokuwiki_version" {
     type    = string
     default = "latest"
@@ -137,6 +142,12 @@ variable "duplicati_pgid" {
 variable "duplicati_puid" {
     type    = number
     default = "1000"
+}
+
+variable "duplicati_settings_encryption_key" {
+    sensitive = true
+    type      = string
+    default   = ""
 }
 
 variable "duplicati_source_host_path" {

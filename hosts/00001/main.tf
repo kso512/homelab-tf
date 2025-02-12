@@ -22,6 +22,7 @@ module "dokuwiki" {
     template         = var.dokuwiki_template
     timezone         = var.timezone
     title            = var.dokuwiki_title
+    typography       = var.dokuwiki_typography
 }
 
 module "duplicati" {

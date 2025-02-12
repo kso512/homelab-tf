@@ -17,6 +17,7 @@ resource "docker_container" "duplicati" {
     "CLI_ARGS=${var.cli_args}",
     "PUID=${var.puid}",
     "PGID=${var.pgid}",
+    "SETTINGS_ENCRYPTION_KEY=${var.settings_encryption_key}",
     "TZ=${var.timezone}",
   ]
   image = docker_image.duplicati.image_id

@@ -43,3 +43,8 @@ variable "title" {
     type    = string
     default = "Dokuwiki"
 }
+
+variable "typography" {
+    type    = number
+    default = 1
+}

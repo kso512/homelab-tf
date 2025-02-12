@@ -43,6 +43,12 @@ variable "source_host_path" {
     default = "/path/to/source"
 }
 
+variable "settings_encryption_key" {
+    sensitive = true
+    type      = string
+    default   = ""
+}
+
 variable "timezone" {
     sensitive = true
     type      = string
